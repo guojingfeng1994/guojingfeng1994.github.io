@@ -6,4 +6,6 @@ test/unit/coverage
 test/e2e/reports
 selenium-debug.log
 
+public/
 .idea
+.deploy_git
