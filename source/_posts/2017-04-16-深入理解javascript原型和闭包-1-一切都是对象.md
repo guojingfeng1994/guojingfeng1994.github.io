@@ -37,6 +37,7 @@ function show(x) {
 
         show();
 ```
+<!-- more -->
 以上代码列出了typeof输出的集中类型标识，其中上面的四种（undefined, number, string, boolean）属于简单的{% raw %}
     <span style="background-color: #87daff;">值类型</span>
 {% endraw %}，不是对象。剩下的几种情况——函数、数组、对象、null、new Number(10)都是对象。他们都是{% raw %}

@@ -40,6 +40,7 @@ function Fn() { }
 看到没有，这样就变成了
 {% asset_img '3-3.png' %}
 没问题！
+<!-- more -->
 
 但是，这样做有何用呢？ —— 解决这个问题，咱们还是先说说jQuery吧。
 ```javascript

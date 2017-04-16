@@ -35,6 +35,7 @@ obj这个对象本质上是被Object函数创建的，因此obj.__proto__=== Obj
 即，{% raw %}
         <span style="background-color: #87daff;">每个对象都有一个__proto__属性，指向创建该对象的函数的prototype</span>
     {% endraw %}。
+<!-- more -->
 
 
 

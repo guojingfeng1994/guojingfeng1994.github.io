@@ -43,6 +43,7 @@ console.log(Function instanceof Object); //  true
 console.log(Function instanceof Function); //  true
 ```
 这些看似很混乱的东西，答案却都是true，这是为何？
+<!-- more -->
 
 正好，这里也接上了咱们上一节说的“乱”。
 

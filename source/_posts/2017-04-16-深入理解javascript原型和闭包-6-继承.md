@@ -37,6 +37,7 @@ console.log(f1.b) //  200
 看图说话：
 {% asset_img '6-1.png' %}
 上图中，访问f1.b时，f1的基本属性中没有b，于是沿着__proto__找到了Foo.prototype.b。
+<!-- more -->
 
 
 

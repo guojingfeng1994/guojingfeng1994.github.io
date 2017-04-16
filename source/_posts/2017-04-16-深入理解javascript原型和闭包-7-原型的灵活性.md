@@ -30,6 +30,7 @@ var arr = [1, 2, true]
 console.log(arr.toString()) //  1,2,true
 ```
 如上代码，Object和Array的toString()方法不一样。肯定是Array.prototype.toString()方法做了修改。
+<!-- more -->
 
 同理，我也可以自定义一个函数，并自己去修改prototype.toString()方法。
 ```javascript
