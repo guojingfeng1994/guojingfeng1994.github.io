@@ -9,3 +9,4 @@ selenium-debug.log
 public/
 .idea
 .deploy_git
+debug.log

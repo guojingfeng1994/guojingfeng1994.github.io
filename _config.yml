@@ -4,9 +4,9 @@
 
 # Site
 title: Kurt's blog
-subtitle:
-description:
-author: Kurt
+subtitle: 没有设计天赋的前端工程师o(╯□╰)o
+description: 专注前端的全栈
+author: 郭景峰
 language: zh-Hans
 timezone: Asia/Shanghai
 
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true  #新建一个页面后自动生成一个同名文件夹（默认为false）
 relative_link: false
 future: true
 highlight:

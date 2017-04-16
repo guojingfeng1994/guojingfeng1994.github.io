@@ -38,12 +38,14 @@ seo: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories
+  categories: /categories
   #about: /about
   archives: /archives
   tags: /tags
   #sitemap: /sitemap.xml
   #commonweal: /404.html
+  production: /production
+  about: /about
 
 
 # Enable/Disable menu icons.
@@ -62,6 +64,7 @@ menu_icons:
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
+  production: lightbulb-o
 
 
 
@@ -133,8 +136,10 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
+social:
   #LinkLabel: Link
+  GitHub: https://github.com/guojingfeng1994
+  NeteaseCloudMusic: http://music.163.com/#/user/home?id=321245599
 
 
 # Social Links Icons
@@ -149,12 +154,13 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
+  NeteaseCloudMusic: music
 
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-#avatar:
+avatar: /uploads/avatar.jpg
 
 
 # Table Of Contents in the Sidebar
@@ -304,7 +310,7 @@ disqus:
 #hypercomments_id:
 
 # Gentie productKey
-#gentie_productKey:
+gentie_productKey: 9140e1f9286146a8b6c1564740b340fa
 
 # changyan
 changyan:
