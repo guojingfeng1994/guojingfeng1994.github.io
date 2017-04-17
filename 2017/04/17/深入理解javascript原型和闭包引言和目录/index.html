@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hello World," />
+  <meta name="keywords" content="javascript,原型链,闭包," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="Hello World">
+<meta name="description" content="花了一整夜的时间去整（chao）理（xi）王福朋的原型和闭包系列，原因是因为  第一：我觉得这应该是我目前看过的最全最好的一个系列了 第二：在之后有时间我希望在原有的基础上可以添加一些自己的注解，方便自己以后翻阅能更快理解 第三：第一次用hexo写文章，总得找点好的东西来写一写吧  好了，基于以上的几个原因，我从王福朋的博客中搬运了他的JavaScript原型与闭包系列博文（如有侵犯，我也不管，哈">
+<meta name="keywords" content="javascript,原型链,闭包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/04/15/hello-world/index.html">
+<meta property="og:title" content="深入理解javascript原型和闭包引言和目录">
+<meta property="og:url" content="http://yoursite.com/2017/04/17/深入理解javascript原型和闭包引言和目录/index.html">
 <meta property="og:site_name" content="Kurt's blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-04-16T07:19:52.668Z">
+<meta property="og:description" content="花了一整夜的时间去整（chao）理（xi）王福朋的原型和闭包系列，原因是因为  第一：我觉得这应该是我目前看过的最全最好的一个系列了 第二：在之后有时间我希望在原有的基础上可以添加一些自己的注解，方便自己以后翻阅能更快理解 第三：第一次用hexo写文章，总得找点好的东西来写一写吧  好了，基于以上的几个原因，我从王福朋的博客中搬运了他的JavaScript原型与闭包系列博文（如有侵犯，我也不管，哈">
+<meta property="og:updated_time" content="2017-04-17T03:50:37.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="深入理解javascript原型和闭包引言和目录">
+<meta name="twitter:description" content="花了一整夜的时间去整（chao）理（xi）王福朋的原型和闭包系列，原因是因为  第一：我觉得这应该是我目前看过的最全最好的一个系列了 第二：在之后有时间我希望在原有的基础上可以添加一些自己的注解，方便自己以后翻阅能更快理解 第三：第一次用hexo写文章，总得找点好的东西来写一写吧  好了，基于以上的几个原因，我从王福朋的博客中搬运了他的JavaScript原型与闭包系列博文（如有侵犯，我也不管，哈">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/15/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/17/深入理解javascript原型和闭包引言和目录/"/>
 
 
 
 
 
-  <title> Hello World | Kurt's blog </title>
+  <title> 深入理解javascript原型和闭包引言和目录 | Kurt's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +280,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/15/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/17/深入理解javascript原型和闭包引言和目录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郭景峰">
@@ -301,7 +301,7 @@
             
             
               
-                Hello World
+                深入理解javascript原型和闭包引言和目录
               
             
           </h1>
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T23:02:59+08:00">
-                2017-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T11:24:48+08:00">
+                2017-04-17
               </time>
             
 
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hello-World/" itemprop="url" rel="index">
-                    <span itemprop="name">Hello World</span>
+                  <a href="/categories/王福朋-深入理解javascript原型和闭包系列/" itemprop="url" rel="index">
+                    <span itemprop="name">王福朋-深入理解javascript原型和闭包系列</span>
                   </a>
                 </span>
 
@@ -357,7 +357,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/15/hello-world/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/04/17/深入理解javascript原型和闭包引言和目录/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -384,15 +384,17 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>花了一整夜的时间去整（chao）理（xi）王福朋的原型和闭包系列，原因是因为</p>
+<ul>
+<li>第一：我觉得这应该是我目前看过的最全最好的一个系列了</li>
+<li>第二：在之后有时间我希望在原有的基础上可以添加一些自己的注解，方便自己以后翻阅能更快理解</li>
+<li>第三：第一次用hexo写文章，总得找点好的东西来写一写吧</li>
+</ul>
+<p>好了，基于以上的几个原因，我从王福朋的博客中搬运了他的JavaScript原型与闭包系列博文（如有侵犯，我也不管，哈哈哈）</p>
+<p>这里写的文章和原作者的一模一样，就算是原文拷贝，也花了我几个小时的时间，可以看出原作者在写博客的时候是付出了多大的辛劳（在这里感谢之）</p>
+<p>如果大家是想了解JavaScript原型和闭包内容，推荐大家到王福朋的博客中去查看<br><blockquote><footer><strong>博文地址</strong><cite><a href="http://www.cnblogs.com/wangfupeng1988/p/4001284.html" target="_blank" rel="external">深入理解javascript原型和闭包系列</a></cite></footer></blockquote><br><a id="more"></a></p>
+<p>下面是在本站中的目录：<br><a href="/2017/04/16/深入理解javascript原型和闭包-1-一切都是对象/" title="理解javascript原型和作用域系列（1）——一切都是对象">理解javascript原型和作用域系列（1）——一切都是对象</a><br><a href="/2017/04/16/深入理解javascript原型和闭包-2-函数和对象的关系/" title="深入理解javascript原型和闭包-2-函数和对象的关系">深入理解javascript原型和闭包-2-函数和对象的关系</a><br><a href="/2017/04/16/深入理解javascript原型和闭包-3-prototype原型/" title="深入理解javascript原型和闭包-3-prototype原型">深入理解javascript原型和闭包-3-prototype原型</a><br><a href="/2017/04/16/深入理解javascript原型和闭包-4-隐式原型/" title="深入理解javascript原型和闭包-4-隐式原型">深入理解javascript原型和闭包-4-隐式原型</a><br><a href="/2017/04/16/深入理解javascript原型和闭包-5-instanceof/" title="深入理解javascript原型和闭包-5-instanceof">深入理解javascript原型和闭包-5-instanceof</a><br><a href="/2017/04/16/深入理解javascript原型和闭包-6-继承/" title="深入理解javascript原型和闭包-6-继承">深入理解javascript原型和闭包-6-继承</a><br><a href="/2017/04/16/深入理解javascript原型和闭包-7-原型的灵活性/" title="深入理解javascript原型和闭包-7-原型的灵活性">深入理解javascript原型和闭包-7-原型的灵活性</a><br><a href="/2017/04/16/深入理解javascript原型和闭包-8-简述【执行上下文】上/" title="深入理解javascript原型和闭包-8-简述【执行上下文】上">深入理解javascript原型和闭包-8-简述【执行上下文】上</a><br><a href="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/" title="深入理解javascript原型和闭包-9-简述【执行上下文】下">深入理解javascript原型和闭包-9-简述【执行上下文】下</a><br><a href="/2017/04/17/深入理解javascript原型和闭包-10-this/" title="深入理解javascript原型和闭包-10-this">深入理解javascript原型和闭包-10-this</a><br><a href="/2017/04/17/深入理解javascript原型和闭包-11-执行上下文栈/" title="深入理解javascript原型和闭包-11-执行上下文栈">深入理解javascript原型和闭包-11-执行上下文栈</a><br><a href="/2017/04/17/深入理解javascript原型和闭包-12-简介【作用域】/" title="深入理解javascript原型和闭包-12-简介【作用域】">深入理解javascript原型和闭包-12-简介【作用域】</a><br><a href="/2017/04/17/深入理解javascript原型和闭包-13-【作用域】和【上下文环境】/" title="深入理解javascript原型和闭包-13-【作用域】和【上下文环境】">深入理解javascript原型和闭包-13-【作用域】和【上下文环境】</a><br><a href="/2017/04/17/深入理解javascript原型和闭包-14-从【自由变量】和【作用域链】/" title="深入理解javascript原型和闭包-14-从【自由变量】和【作用域链】">深入理解javascript原型和闭包-14-从【自由变量】和【作用域链】</a><br><a href="/2017/04/17/深入理解javascript原型和闭包-15-闭包/" title="深入理解javascript原型和闭包-15-闭包">深入理解javascript原型和闭包-15-闭包</a><br><a href="/2017/04/17/深入理解javascript原型和闭包-16-补充：上下文环境和作用域的关系/" title="深入理解javascript原型和闭包-16-补充：上下文环境和作用域的关系">深入理解javascript原型和闭包-16-补充：上下文环境和作用域的关系</a></p>
+<p>在此再次感谢原作者的辛劳，感谢他的热情分享，让我对JavaScript又有了进一步的理解</p>
 
       
     </div>
@@ -422,7 +424,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hello-World/" rel="tag"># Hello World</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/原型链/" rel="tag"># 原型链</a>
+          
+            <a href="/tags/闭包/" rel="tag"># 闭包</a>
           
         </div>
       
@@ -435,15 +441,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/16/深入理解javascript原型和闭包-1-一切都是对象/" rel="next" title="深入理解javascript原型和闭包(1)--一切都是对象">
-                <i class="fa fa-chevron-left"></i> 深入理解javascript原型和闭包(1)--一切都是对象
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/17/深入理解javascript原型和闭包-16-补充：上下文环境和作用域的关系/" rel="prev" title="深入理解javascript原型和闭包(16)--补充：上下文环境和作用域的关系">
+                深入理解javascript原型和闭包(16)--补充：上下文环境和作用域的关系 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -492,17 +498,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -586,22 +583,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
