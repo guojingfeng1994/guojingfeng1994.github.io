@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #21dd2b;
+  background: #2ae2cc;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2564,4 +2564,17 @@ td > p {
   .fork-me-on-github {
     display: none;
   }
+}
+.production {
+  margin-top: 25px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 14px #cacbcb;
+  -moz-box-shadow: 0 0 14px #cacbcc;
+  background: #fff;
+}
+.production-item {
+  font-size: 16px;
+}
+.production-item a {
+  border: none;
 }
