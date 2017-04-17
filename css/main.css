@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #38ff49;
+  background: #21dd2b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2559,4 +2559,9 @@ body,
 }
 td > p {
   margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .fork-me-on-github {
+    display: none;
+  }
 }
