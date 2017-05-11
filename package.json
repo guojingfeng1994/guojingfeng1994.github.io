@@ -7,6 +7,7 @@
   },
   "scripts": {
     "server": "hexo server",
+    "clean": "hexo clean",
     "generate": "hexo g",
     "deploy": "hexo g -d"
   },
