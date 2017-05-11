@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://blog.guojingfeng.com/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -67,9 +67,16 @@ pagination_dir: page
 theme: next
 sitemap:
     path: sitemap.xml
+#    百度主动推送插件
+baidu_url_submit:
+  count: 1 ## 提交最新的一个链接
+  host: blog.guojingfeng.com ## 在百度站长平台中注册的域名
+  token: zSm7EjZgIMyGalKZ ## 您的秘钥
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: https://github.com/guojingfeng1994/guojingfeng1994.github.io
+  - type: git
+    repo: https://github.com/guojingfeng1994/guojingfeng1994.github.io
+  - type: baidu_url_submitter ## 百度主动推送服务
