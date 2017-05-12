@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.guojingfeng.com/js/canvas_nest/index.js</loc>
+    
+    <lastmod>2017-05-12T13:42:41.774Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.guojingfeng.com/about/index.html</loc>
     
     <lastmod>2017-05-10T08:20:03.293Z</lastmod>
