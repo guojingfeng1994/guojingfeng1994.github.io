@@ -5,7 +5,7 @@
     
   <url>
     <loc>/2017/05/17/%E5%85%A8%E9%9D%A2%E7%90%86%E8%A7%A3java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2018-05-17T15:00:20.197Z</lastmod>
+    <lastmod>2018-05-17T15:58:26.235Z</lastmod>
     <data>
         <display>
         <title>全面理解java内存模型</title>
@@ -13,15 +13,55 @@
         
         <tag>java</tag>
          
-        <tag>内存模型</tag>
-         
         <tag>多线程</tag>
+         
+        <tag>内存模型</tag>
          
          
            
              
               <breadCrumb title="java内存模型" url="/categories/java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>/2017/05/17/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%EF%BC%88thread%20signal%EF%BC%89/</loc>
+    <lastmod>2018-05-17T15:55:35.299Z</lastmod>
+    <data>
+        <display>
+        <title>线程之间的通信（thread signal）</title>
+        <pubTime>2017-05-17T15:41:22.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>多线程</tag>
+         
+        <tag>线程通信</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>/2017/05/17/volatile%E5%92%8Csynchronized%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2018-05-17T15:48:50.606Z</lastmod>
+    <data>
+        <display>
+        <title>volatile和synchronized的区别</title>
+        <pubTime>2017-05-17T15:40:42.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>多线程</tag>
+         
+         
+           
         </display>
     </data>
     </url>

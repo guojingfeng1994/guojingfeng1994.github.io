@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,内存模型,多线程," />
+  <meta name="keywords" content="java,多线程,内存模型," />
 
 
 
@@ -88,7 +88,7 @@
 
 
 <meta name="description" content="Java内存模型即Java Memory Model，简称JMM。JMM定义了Java 虚拟机(JVM)在计算机内存(RAM)中的工作方式。JVM是整个计算机虚拟模型，所以JMM是隶属于JVM的。 如果我们要想深入了解Java并发编程，就要先理解好Java内存模型。Java内存模型定义了多线程之间共享变量的可见性以及如何在需要的时候对共享变量进行同步。原始的Java内存模型效率并不是很理想，因此J">
-<meta name="keywords" content="java,内存模型,多线程">
+<meta name="keywords" content="java,多线程,内存模型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="全面理解java内存模型">
 <meta property="og:url" content="/2017/05/17/全面理解java内存模型/index.html">
@@ -103,7 +103,7 @@
 <meta property="og:image" content="/2017/05/17/全面理解java内存模型/20160921183144995">
 <meta property="og:image" content="/2017/05/17/全面理解java内存模型/20160921183218651">
 <meta property="og:image" content="/2017/05/17/全面理解java内存模型/20160921183251870">
-<meta property="og:updated_time" content="2018-05-17T15:00:20.197Z">
+<meta property="og:updated_time" content="2018-05-17T15:58:26.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全面理解java内存模型">
 <meta name="twitter:description" content="Java内存模型即Java Memory Model，简称JMM。JMM定义了Java 虚拟机(JVM)在计算机内存(RAM)中的工作方式。JVM是整个计算机虚拟模型，所以JMM是隶属于JVM的。 如果我们要想深入了解Java并发编程，就要先理解好Java内存模型。Java内存模型定义了多线程之间共享变量的可见性以及如何在需要的时候对共享变量进行同步。原始的Java内存模型效率并不是很理想，因此J">
@@ -412,7 +412,7 @@
 <h2 id="线程之间的通信"><a href="#线程之间的通信" class="headerlink" title="线程之间的通信"></a>线程之间的通信</h2><p>线程的通信是指线程之间以何种机制来交换信息。在命令式编程中，线程之间的通信机制有两种<strong>共享内存</strong>和<strong>消息传递</strong>。<br><a id="more"></a></p>
 <p>在<strong>共享内存</strong>的并发模型里，线程之间共享程序的公共状态，线程之间通过写-读内存中的公共状态来隐式进行通信，典型的共享内存通信方式就是通过<strong>共享对象</strong>进行通信。</p>
 <p>在<strong>消息传递</strong>的并发模型里，线程之间没有公共状态，线程之间必须通过明确的发送消息来显式进行通信，在java中典型的消息传递方式就是<strong>wait()</strong>和<strong>notify()</strong>。</p>
-<p>关于Java线程之间的通信，可以参考<a href="https://blog.csdn.net/suifeng3051/article/details/51863010?locationNum=2" title=" 线程之间的通信（thread signal）" target="_blank" rel="external">线程之间的通信（thread signal）</a>。</p>
+<p>关于Java线程之间的通信，可以参考<a href="/2017/05/17/线程之间的通信（thread signal）/" title="线程之间的通信（thread signal）">线程之间的通信（thread signal）</a></p>
 <h2 id="线程之间的同步"><a href="#线程之间的同步" class="headerlink" title="线程之间的同步"></a>线程之间的同步</h2><p>同步是指程序用于控制不同线程之间操作发生相对顺序的机制。</p>
 <p>在共享内存并发模型里，同步是显式进行的。程序员必须显式指定某个方法或某段代码需要在线程之间互斥执行。</p>
 <p>在消息传递的并发模型里，由于消息的发送必须在消息的接收之前，因此同步是隐式进行的。</p>
@@ -485,7 +485,7 @@
 <br>
 
 <p>要解决上面的问题我们可以使用java synchronized代码块。synchronized代码块可以保证同一个时刻只能有一个线程进入代码竞争区，synchronized代码块也能保证代码块中所有变量都将会从主存中读，当线程退出代码块时，对所有变量的更新将会flush到主存，不管这些变量是不是volatile类型的。</p>
-<h2 id="volatile和-synchronized区别"><a href="#volatile和-synchronized区别" class="headerlink" title="volatile和 synchronized区别"></a>volatile和 synchronized区别</h2><p>详细请见 <a href="https://blog.csdn.net/suifeng3051/article/details/52611233" target="_blank" rel="external">volatile和synchronized的区别</a>。</p>
+<h2 id="volatile和-synchronized区别"><a href="#volatile和-synchronized区别" class="headerlink" title="volatile和 synchronized区别"></a>volatile和 synchronized区别</h2><p>详细请见<a href="/2017/05/17/volatile和synchronized的区别/" title="volatile和synchronized的区别">volatile和synchronized的区别</a></p>
 <h2 id="支撑Java内存模型的基础原理"><a href="#支撑Java内存模型的基础原理" class="headerlink" title="支撑Java内存模型的基础原理"></a>支撑Java内存模型的基础原理</h2><h3 id="指令重排序"><a href="#指令重排序" class="headerlink" title="指令重排序"></a>指令重排序</h3><p>在执行程序时，为了提高性能，编译器和处理器会对指令做重排序。但是，JMM确保在不同的编译器和不同的处理器平台之上，通过插入特定类型的<code>Memory Barrier</code>来禁止特定类型的编译器重排序和处理器重排序，为上层提供一致的内存可见性保证。</p>
 <ol>
 <li>编译器优化重排序：编译器在不改变单线程程序语义的前提下，可以重新安排语句的执行顺序。</li>
@@ -553,9 +553,9 @@
           
             <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/内存模型/" rel="tag"># 内存模型</a>
-          
             <a href="/tags/多线程/" rel="tag"># 多线程</a>
+          
+            <a href="/tags/内存模型/" rel="tag"># 内存模型</a>
           
         </div>
       
@@ -567,6 +567,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/17/volatile和synchronized的区别/" rel="next" title="volatile和synchronized的区别">
+                <i class="fa fa-chevron-left"></i> volatile和synchronized的区别
+              </a>
             
           </div>
 
@@ -650,7 +654,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -672,7 +676,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
