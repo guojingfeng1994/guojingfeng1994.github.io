@@ -1,1 +1,1 @@
-http://blog.guojingfeng.com/2017/04/17/深入理解javascript原型和闭包引言和目录/
+/2017/04/17/深入理解javascript原型和闭包引言和目录/
