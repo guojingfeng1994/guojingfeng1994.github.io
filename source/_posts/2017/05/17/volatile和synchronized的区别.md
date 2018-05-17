@@ -1,5 +1,6 @@
 ---
 title: volatile和synchronized的区别
+categories: java
 date: 2017-05-17 23:40:42
 tags:
   - java

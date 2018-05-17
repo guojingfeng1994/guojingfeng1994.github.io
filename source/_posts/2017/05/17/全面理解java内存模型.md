@@ -1,6 +1,8 @@
 ---
 title: 全面理解java内存模型
-categories: java内存模型
+categories: 
+  - java
+  - java内存模型
 date: 2017-05-17 21:56:12
 tags:
   - java

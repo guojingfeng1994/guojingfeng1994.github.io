@@ -1,5 +1,6 @@
 ---
 title: 线程之间的通信（thread signal）
+categories: java
 date: 2017-05-17 23:41:22
 tags:
   - java
