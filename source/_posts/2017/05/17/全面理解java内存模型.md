@@ -24,8 +24,7 @@ tags:
 
 在**消息传递**的并发模型里，线程之间没有公共状态，线程之间必须通过明确的发送消息来显式进行通信，在java中典型的消息传递方式就是**wait()**和**notify()**。
 
-关于Java线程之间的通信，可以参考[线程之间的通信（thread signal）](https://blog.csdn.net/suifeng3051/article/details/51863010?locationNum=2 " 线程之间的通信（thread signal）")。
-
+关于Java线程之间的通信，可以参考{% post_link '线程之间的通信（thread signal）' '线程之间的通信（thread signal）' %}
 ## 线程之间的同步
 
 同步是指程序用于控制不同线程之间操作发生相对顺序的机制。
@@ -170,8 +169,7 @@ Static类型的变量以及类本身相关信息都会随着类本身存储在�
 
 ## volatile和 synchronized区别
 
-详细请见 [volatile和synchronized的区别](https://blog.csdn.net/suifeng3051/article/details/52611233)。
-
+详细请见{% post_link 'volatile和synchronized的区别' 'volatile和synchronized的区别' %}
 ## 支撑Java内存模型的基础原理
 
 ### 指令重排序
