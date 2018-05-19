@@ -55,10 +55,10 @@ bin/solr stop
 bin/solr start -cloud -z 192.168.147.191:2181
 {% endcodeblock %}
 
-打开浏览器，访问任意节点http地址（如{% raw %}http://192.168.147.191:8983/solr{% endraw %}），此时菜单会多出个cloud选项,但目前右边还看不到有其他节点。
+打开浏览器，访问任意节点http地址（如{% raw %}http://192.168.147.191:8983/solr{% endraw %}），此时菜单会多出个cloud选项。
 
 {% asset_img 'QQ图片20180519222340.png' %}
-
+{% raw %}<br/>{% endraw %}
 以SolrCloud运行模式再启动其他2台机器,能够访问到对应http地址说明启动成功。
 
 创建一个Collections ，Collections 名称随便，config set使用默认就好，numShards分片数量默认，replicationFactor分片副本数量定义为3（为了看到集群状态，定义为我配置的机器节点数量）
