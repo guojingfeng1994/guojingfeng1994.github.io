@@ -67,6 +67,9 @@ bin/solr start -cloud -z 192.168.147.191:2181
 然后可以在cloud的graph中看到以下画面，说明SolrCloud搭建完成。
 {% asset_img 'QQ图片20180519234500.png' %}
 
+## tips
+在使用solr脚本的时候，默认执行bin目录下的solr.in.sh里面的配置，可以把一些启动参数配置进去，如ZooKeeper服务地址，配完启动的时候就不需要加-z参数啦。
+
 ## 搭建时遇到的问题
 暂无。
 
