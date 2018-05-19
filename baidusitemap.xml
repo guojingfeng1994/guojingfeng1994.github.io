@@ -3,6 +3,55 @@
 
 
     
+  <url>
+    <loc>/2017/12/19/solr%E7%9A%84%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2018-05-19T15:49:19.754Z</lastmod>
+    <data>
+        <display>
+        <title>solr的集群环境搭建</title>
+        <pubTime>2017-12-19T12:13:37.000Z</pubTime>
+        
+        <tag>Solr</tag>
+         
+        <tag>SolrCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="/categories/java/"/>
+          
+             
+              <breadCrumb title="服务器环境搭建" url="/categories/java/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>/2017/11/03/%E5%85%B3%E4%BA%8E%E9%9B%86%E7%BE%A4%E3%80%81%E5%88%86%E5%B8%83%E5%BC%8F%E3%80%81%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2018-05-19T13:36:49.799Z</lastmod>
+    <data>
+        <display>
+        <title>关于集群、分布式、伪分布式的概念理解</title>
+        <pubTime>2017-11-03T04:32:17.000Z</pubTime>
+        
+        <tag>分布式</tag>
+         
+        <tag>集群</tag>
+         
+        <tag>伪分布式</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
