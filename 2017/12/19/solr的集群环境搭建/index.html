@@ -98,7 +98,7 @@
 <meta property="og:image" content="/2017/12/19/solr的集群环境搭建/QQ图片20180519222340.png">
 <meta property="og:image" content="/2017/12/19/solr的集群环境搭建/QQ图片20180519233743.png">
 <meta property="og:image" content="/2017/12/19/solr的集群环境搭建/QQ图片20180519234500.png">
-<meta property="og:updated_time" content="2018-05-19T15:49:19.754Z">
+<meta property="og:updated_time" content="2018-05-19T16:09:35.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="solr的集群环境搭建">
 <meta name="twitter:description" content="系统环境检查根据Solr的官方说明，从Solr 6（包括SolrJ客户端库）开始，Java支持版本最低为Java 8。 这里以Solr7.0.1版本作为示例。 下载首先，进入下载页面,找到solr-7.0.1.tgz。 安装进入下载的文件夹，解压到app目录下12cd ~tar zxf solr-7.0.1.tgz -C app">
@@ -428,6 +428,7 @@
 <p>以SolrCloud运行模式再启动其他2台机器,能够访问到对应http地址说明启动成功。</p>
 <p>创建一个Collections ，Collections 名称随便，config set使用默认就好，numShards分片数量默认，replicationFactor分片副本数量定义为3（为了看到集群状态，定义为我配置的机器节点数量）<br><img src="/2017/12/19/solr的集群环境搭建/QQ图片20180519233743.png" alt="QQ图片20180519233743.png" title=""></p>
 <p>然后可以在cloud的graph中看到以下画面，说明SolrCloud搭建完成。<br><img src="/2017/12/19/solr的集群环境搭建/QQ图片20180519234500.png" alt="QQ图片20180519234500.png" title=""></p>
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>在使用solr脚本的时候，默认执行bin目录下的solr.in.sh里面的配置，可以把一些启动参数配置进去，如ZooKeeper服务地址，配完启动的时候就不需要加-z参数啦。</p>
 <h2 id="搭建时遇到的问题"><a href="#搭建时遇到的问题" class="headerlink" title="搭建时遇到的问题"></a>搭建时遇到的问题</h2><p>暂无。</p>
 
       
@@ -634,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境检查"><span class="nav-number">1.</span> <span class="nav-text">系统环境检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单机版运行模式"><span class="nav-number">4.</span> <span class="nav-text">单机版运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SolrCloud运行模式"><span class="nav-number">5.</span> <span class="nav-text">SolrCloud运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建时遇到的问题"><span class="nav-number">6.</span> <span class="nav-text">搭建时遇到的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境检查"><span class="nav-number">1.</span> <span class="nav-text">系统环境检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单机版运行模式"><span class="nav-number">4.</span> <span class="nav-text">单机版运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SolrCloud运行模式"><span class="nav-number">5.</span> <span class="nav-text">SolrCloud运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-number">6.</span> <span class="nav-text">tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建时遇到的问题"><span class="nav-number">7.</span> <span class="nav-text">搭建时遇到的问题</span></a></li></ol></div>
             
 
           </div>
