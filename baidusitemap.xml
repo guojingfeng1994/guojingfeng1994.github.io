@@ -4,11 +4,33 @@
 
     
   <url>
-    <loc>/2017/12/19/solr%E7%9A%84%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2018-05-19T16:15:05.696Z</lastmod>
+    <loc>/2017/05/14/JS%E4%B8%ADthis%E7%9A%84%E6%8C%87%E5%90%91%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-05-20T02:49:00.149Z</lastmod>
     <data>
         <display>
-        <title>solr的集群环境搭建</title>
+        <title>JS中this的指向总结</title>
+        <pubTime>2017-05-13T18:17:28.000Z</pubTime>
+        
+        <tag>this</tag>
+         
+        <tag>this指向</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>/2017/12/19/solr%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2018-05-19T18:14:48.731Z</lastmod>
+    <data>
+        <display>
+        <title>solr环境搭建</title>
         <pubTime>2017-12-19T12:13:37.000Z</pubTime>
         
         <tag>Solr</tag>
@@ -18,45 +40,19 @@
          
            
              
-              <breadCrumb title="java" url="/categories/java/"/>
+              <breadCrumb title="Java" url="/categories/Java/"/>
           
              
-              <breadCrumb title="服务器环境搭建" url="/categories/java/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+              <breadCrumb title="服务器环境搭建" url="/categories/Java/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
           
         </display>
     </data>
     </url>
 
-    
-  <url>
-    <loc>/2017/11/03/%E5%85%B3%E4%BA%8E%E9%9B%86%E7%BE%A4%E3%80%81%E5%88%86%E5%B8%83%E5%BC%8F%E3%80%81%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E6%A6%82%E5%BF%B5/</loc>
-    <lastmod>2018-05-19T13:36:49.799Z</lastmod>
-    <data>
-        <display>
-        <title>关于集群、分布式、伪分布式的概念理解</title>
-        <pubTime>2017-11-03T04:32:17.000Z</pubTime>
-        
-        <tag>分布式</tag>
-         
-        <tag>集群</tag>
-         
-        <tag>伪分布式</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
     
   <url>
     <loc>/2017/04/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E5%BC%95%E8%A8%80%E5%92%8C%E7%9B%AE%E5%BD%95/</loc>
-    <lastmod>2017-04-17T03:50:37.758Z</lastmod>
+    <lastmod>2018-05-19T18:13:51.705Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包引言和目录</title>
@@ -71,7 +67,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -80,7 +79,7 @@
     
   <url>
     <loc>/2017/04/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-16-%E8%A1%A5%E5%85%85%EF%BC%9A%E4%B8%8A%E4%B8%8B%E6%96%87%E7%8E%AF%E5%A2%83%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E5%85%B3%E7%B3%BB/</loc>
-    <lastmod>2017-04-16T17:42:24.145Z</lastmod>
+    <lastmod>2018-05-19T18:13:45.225Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(16)--补充：上下文环境和作用域的关系</title>
@@ -95,7 +94,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -104,7 +106,7 @@
     
   <url>
     <loc>/2017/04/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-15-%E9%97%AD%E5%8C%85/</loc>
-    <lastmod>2017-04-16T17:42:08.125Z</lastmod>
+    <lastmod>2018-05-19T18:13:40.979Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(15)--闭包</title>
@@ -119,7 +121,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -128,7 +133,7 @@
     
   <url>
     <loc>/2017/04/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-14-%E4%BB%8E%E3%80%90%E8%87%AA%E7%94%B1%E5%8F%98%E9%87%8F%E3%80%91%E5%92%8C%E3%80%90%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E3%80%91/</loc>
-    <lastmod>2017-04-16T17:41:59.458Z</lastmod>
+    <lastmod>2018-05-19T18:13:35.942Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(14)--从【自由变量】和【作用域链】</title>
@@ -143,7 +148,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -152,7 +160,7 @@
     
   <url>
     <loc>/2017/04/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-13-%E3%80%90%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%91%E5%92%8C%E3%80%90%E4%B8%8A%E4%B8%8B%E6%96%87%E7%8E%AF%E5%A2%83%E3%80%91/</loc>
-    <lastmod>2017-04-16T17:41:48.210Z</lastmod>
+    <lastmod>2018-05-19T18:13:31.359Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(13)--【作用域】和【上下文环境】</title>
@@ -167,31 +175,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>/2017/04/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-12-%E7%AE%80%E4%BB%8B%E3%80%90%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%91/</loc>
-    <lastmod>2017-04-16T17:41:33.237Z</lastmod>
-    <data>
-        <display>
-        <title>深入理解javascript原型和闭包(12)--简介【作用域】</title>
-        <pubTime>2017-04-16T16:40:13.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>原型链</tag>
-         
-        <tag>闭包</tag>
-         
-         
-           
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -200,7 +187,7 @@
     
   <url>
     <loc>/2017/04/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-11-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/</loc>
-    <lastmod>2017-04-16T17:41:12.722Z</lastmod>
+    <lastmod>2018-05-19T18:13:25.723Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(11)--执行上下文栈</title>
@@ -215,7 +202,37 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>/2017/04/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-12-%E7%AE%80%E4%BB%8B%E3%80%90%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%91/</loc>
+    <lastmod>2018-05-19T18:13:21.887Z</lastmod>
+    <data>
+        <display>
+        <title>深入理解javascript原型和闭包(12)--简介【作用域】</title>
+        <pubTime>2017-04-16T16:40:13.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>原型链</tag>
+         
+        <tag>闭包</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -224,7 +241,7 @@
     
   <url>
     <loc>/2017/04/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-10-this/</loc>
-    <lastmod>2017-04-16T17:40:59.188Z</lastmod>
+    <lastmod>2018-05-19T18:13:12.417Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(10)--this</title>
@@ -239,7 +256,34 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>/2017/11/03/%E5%85%B3%E4%BA%8E%E9%9B%86%E7%BE%A4%E3%80%81%E5%88%86%E5%B8%83%E5%BC%8F%E3%80%81%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2018-05-19T18:12:51.133Z</lastmod>
+    <data>
+        <display>
+        <title>关于集群、分布式、伪分布式的概念理解</title>
+        <pubTime>2017-11-03T04:32:17.000Z</pubTime>
+        
+        <tag>分布式</tag>
+         
+        <tag>集群</tag>
+         
+        <tag>伪分布式</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="/categories/Java/"/>
           
         </display>
     </data>
@@ -248,7 +292,7 @@
     
   <url>
     <loc>/2017/04/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-9-%E7%AE%80%E8%BF%B0%E3%80%90%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E3%80%91%E4%B8%8B/</loc>
-    <lastmod>2017-04-16T17:40:49.435Z</lastmod>
+    <lastmod>2018-05-19T18:12:26.865Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(9)--简述【执行上下文】下</title>
@@ -263,7 +307,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -272,7 +319,7 @@
     
   <url>
     <loc>/2017/04/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-8-%E7%AE%80%E8%BF%B0%E3%80%90%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E3%80%91%E4%B8%8A/</loc>
-    <lastmod>2017-04-16T17:40:37.429Z</lastmod>
+    <lastmod>2018-05-19T18:12:19.143Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(8)--简述【执行上下文】上</title>
@@ -287,7 +334,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -296,7 +346,7 @@
     
   <url>
     <loc>/2017/04/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-7-%E5%8E%9F%E5%9E%8B%E7%9A%84%E7%81%B5%E6%B4%BB%E6%80%A7/</loc>
-    <lastmod>2017-04-16T17:40:17.673Z</lastmod>
+    <lastmod>2018-05-19T18:12:12.477Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(7)--原型的灵活性</title>
@@ -311,7 +361,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -320,7 +373,7 @@
     
   <url>
     <loc>/2017/04/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-6-%E7%BB%A7%E6%89%BF/</loc>
-    <lastmod>2017-04-16T17:40:00.937Z</lastmod>
+    <lastmod>2018-05-19T18:12:03.823Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(6)--继承</title>
@@ -335,7 +388,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -344,7 +400,7 @@
     
   <url>
     <loc>/2017/04/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-5-instanceof/</loc>
-    <lastmod>2017-04-16T17:39:50.500Z</lastmod>
+    <lastmod>2018-05-19T18:11:58.282Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(5)--instanceof</title>
@@ -359,7 +415,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -368,7 +427,7 @@
     
   <url>
     <loc>/2017/04/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-4-%E9%9A%90%E5%BC%8F%E5%8E%9F%E5%9E%8B/</loc>
-    <lastmod>2017-04-16T17:39:37.962Z</lastmod>
+    <lastmod>2018-05-19T18:11:52.777Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(4)--隐式原型</title>
@@ -383,7 +442,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -392,7 +454,7 @@
     
   <url>
     <loc>/2017/04/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-3-prototype%E5%8E%9F%E5%9E%8B/</loc>
-    <lastmod>2017-04-16T17:39:07.081Z</lastmod>
+    <lastmod>2018-05-19T18:11:46.559Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(3)--prototype原型</title>
@@ -407,7 +469,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -416,7 +481,7 @@
     
   <url>
     <loc>/2017/04/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-2-%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B3%E7%B3%BB/</loc>
-    <lastmod>2017-04-16T17:38:53.273Z</lastmod>
+    <lastmod>2018-05-19T18:11:36.006Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(2)--函数和对象的关系</title>
@@ -431,7 +496,10 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
@@ -440,7 +508,7 @@
     
   <url>
     <loc>/2017/04/16/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85-1-%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2017-04-16T17:38:06.342Z</lastmod>
+    <lastmod>2018-05-19T18:11:24.059Z</lastmod>
     <data>
         <display>
         <title>深入理解javascript原型和闭包(1)--一切都是对象</title>
@@ -455,12 +523,17 @@
          
            
              
-              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="王福朋-深入理解javascript原型和闭包系列" url="/categories/JavaScript/%E7%8E%8B%E7%A6%8F%E6%9C%8B-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
     </url>
 
+    
+    
     
     
   <url>
