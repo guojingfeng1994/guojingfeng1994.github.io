@@ -292,6 +292,172 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="/2017/04/17/深入理解javascript原型和闭包-11-执行上下文栈/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郭景峰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kurt's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/17/深入理解javascript原型和闭包-11-执行上下文栈/" itemprop="url">
+                  深入理解javascript原型和闭包(11)--执行上下文栈
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T00:27:02+08:00">
+                2017-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/王福朋-深入理解javascript原型和闭包系列/" itemprop="url" rel="index">
+                    <span itemprop="name">王福朋-深入理解javascript原型和闭包系列</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>原文地址</strong><cite><a href="http://www.cnblogs.com/wangfupeng1988/p/3989357.html">深入理解javascript原型和闭包（11）——执行上下文栈</a></cite></footer></blockquote>
+<p>继续上文的内容。</p>
+<p>执行全局代码时，会产生一个执行上下文环境，每次调用函数都又会产生执行上下文环境。当函数调用完成时，这个上下文环境以及其中的数据都会被消除，再重新回到全局上下文环境。
+                                                                                                                       <span style="background-color: #87daff;">处于活动状态的执行上下文环境只有一个</span>
+                                                                                                                     。</p>
+
+ <span style="background-color: #87daff;">其实这是一个压栈出栈的过程——执行上下文栈</span>
+。如下图：<br><img src="/2017/04/17/深入理解javascript原型和闭包-11-执行上下文栈/11-1.png" alt="11-1.png" title="">
+<p>可根据以下代码来详细介绍上下文栈的压栈、出栈过程。<br><img src="/2017/04/17/深入理解javascript原型和闭包-11-执行上下文栈/11-2.png" alt="11-2.png" title=""><br>如上代码。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/17/深入理解javascript原型和闭包-11-执行上下文栈/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="/2017/04/17/深入理解javascript原型和闭包-10-this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1785,168 +1951,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/2017/04/16/深入理解javascript原型和闭包-1-一切都是对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="郭景峰">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kurt's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/16/深入理解javascript原型和闭包-1-一切都是对象/" itemprop="url">
-                  深入理解javascript原型和闭包(1)--一切都是对象
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-16T20:09:34+08:00">
-                2017-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/王福朋-深入理解javascript原型和闭包系列/" itemprop="url" rel="index">
-                    <span itemprop="name">王福朋-深入理解javascript原型和闭包系列</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>原文地址</strong><cite><a href="http://www.cnblogs.com/wangfupeng1988/p/3977987.html">深入理解javascript原型和闭包（1）——一切都是对象</a></cite></footer></blockquote>
-<h6 id="“一切都是对象”这句话的重点在于如何去理解“对象”这个概念。"><a href="#“一切都是对象”这句话的重点在于如何去理解“对象”这个概念。" class="headerlink" title="“一切都是对象”这句话的重点在于如何去理解“对象”这个概念。"></a>“一切都是对象”这句话的重点在于如何去理解“对象”这个概念。</h6><p>——当然，也不是所有的都是对象，值类型就不是对象。</p>
-<p>首先咱们还是先看看javascript中一个常用的一元操作符——typeof。typeof应该算是咱们的老朋友，还有谁没用过它？<br><blockquote><p>注释：原文中描述的typeof是一个函数，其实tyepof是一个一元操作符，原作者已经知晓，暂时未在文章中修改</p>
-</blockquote></p>
-<p>typeof函数输出的一共有几种类型，在此列出：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">typeof</span>(x));    <span class="comment">// undefined</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="number">10</span>));   <span class="comment">// number</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="string">'abc'</span>)); <span class="comment">// string</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="literal">true</span>));  <span class="comment">// boolean</span></div><div class="line"></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; &#125;));  <span class="comment">//function</span></div><div class="line"></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">typeof</span>([<span class="number">1</span>, <span class="string">'a'</span>, <span class="literal">true</span>]));  <span class="comment">//object</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">typeof</span> (&#123; <span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span> &#125;));  <span class="comment">//object</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">typeof</span> (<span class="literal">null</span>));  <span class="comment">//object</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">typeof</span> (<span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">10</span>)));  <span class="comment">//object</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        show();</div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/16/深入理解javascript原型和闭包-1-一切都是对象/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1996,7 +2000,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2018,7 +2022,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

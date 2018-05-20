@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,原型链,闭包," />
+  <meta name="keywords" content="Solr,SolrCloud," />
 
 
 
@@ -87,20 +87,22 @@
 
 
 
-<meta name="description" content="原文地址深入理解javascript原型和闭包（9）——简述【执行上下文】下 继续上一篇文章（深入理解javascript原型和闭包-8-简述【执行上下文】上）的内容。 上一篇我们讲到在全局环境下的代码段中，执行上下文环境中有如何数据： 变量、函数表达式——变量声明，默认赋值为undefined；this——赋值；函数声明——赋值； 如果在函数中，除了以上数据之外，还会有其他数据。先看以下代码：以">
-<meta name="keywords" content="javascript,原型链,闭包">
+<meta name="description" content="系统环境检查根据Solr的官方说明，从Solr 6（包括SolrJ客户端库）开始，Java支持版本最低为Java 8。 这里以Solr7.0.1版本作为示例。 下载首先，进入下载页面,找到solr-7.0.1.tgz。 安装进入下载的文件夹，解压到app目录下12cd ~tar zxf solr-7.0.1.tgz -C app">
+<meta name="keywords" content="Solr,SolrCloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解javascript原型和闭包(9)--简述【执行上下文】下">
-<meta property="og:url" content="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/index.html">
+<meta property="og:title" content="solr的环境搭建">
+<meta property="og:url" content="/2017/12/19/solr的环境搭建/index.html">
 <meta property="og:site_name" content="Kurt's blog">
-<meta property="og:description" content="原文地址深入理解javascript原型和闭包（9）——简述【执行上下文】下 继续上一篇文章（深入理解javascript原型和闭包-8-简述【执行上下文】上）的内容。 上一篇我们讲到在全局环境下的代码段中，执行上下文环境中有如何数据： 变量、函数表达式——变量声明，默认赋值为undefined；this——赋值；函数声明——赋值； 如果在函数中，除了以上数据之外，还会有其他数据。先看以下代码：以">
-<meta property="og:image" content="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-1.png">
-<meta property="og:image" content="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-2.png">
-<meta property="og:updated_time" content="2018-05-19T18:12:26.865Z">
+<meta property="og:description" content="系统环境检查根据Solr的官方说明，从Solr 6（包括SolrJ客户端库）开始，Java支持版本最低为Java 8。 这里以Solr7.0.1版本作为示例。 下载首先，进入下载页面,找到solr-7.0.1.tgz。 安装进入下载的文件夹，解压到app目录下12cd ~tar zxf solr-7.0.1.tgz -C app">
+<meta property="og:image" content="/2017/12/19/solr的环境搭建/QQ图片20171219215719.png">
+<meta property="og:image" content="/2017/12/19/solr的环境搭建/QQ图片20171219222340.png">
+<meta property="og:image" content="/2017/12/19/solr的环境搭建/QQ图片20171219233743.png">
+<meta property="og:image" content="/2017/12/19/solr的环境搭建/QQ图片20171219234500.png">
+<meta property="og:updated_time" content="2018-05-20T04:04:41.504Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解javascript原型和闭包(9)--简述【执行上下文】下">
-<meta name="twitter:description" content="原文地址深入理解javascript原型和闭包（9）——简述【执行上下文】下 继续上一篇文章（深入理解javascript原型和闭包-8-简述【执行上下文】上）的内容。 上一篇我们讲到在全局环境下的代码段中，执行上下文环境中有如何数据： 变量、函数表达式——变量声明，默认赋值为undefined；this——赋值；函数声明——赋值； 如果在函数中，除了以上数据之外，还会有其他数据。先看以下代码：以">
-<meta name="twitter:image" content="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-1.png">
+<meta name="twitter:title" content="solr的环境搭建">
+<meta name="twitter:description" content="系统环境检查根据Solr的官方说明，从Solr 6（包括SolrJ客户端库）开始，Java支持版本最低为Java 8。 这里以Solr7.0.1版本作为示例。 下载首先，进入下载页面,找到solr-7.0.1.tgz。 安装进入下载的文件夹，解压到app目录下12cd ~tar zxf solr-7.0.1.tgz -C app">
+<meta name="twitter:image" content="/2017/12/19/solr的环境搭建/QQ图片20171219215719.png">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/"/>
+  <link rel="canonical" href="/2017/12/19/solr的环境搭建/"/>
 
 
 
 
 
-  <title> 深入理解javascript原型和闭包(9)--简述【执行上下文】下 | Kurt's blog </title>
+  <title> solr的环境搭建 | Kurt's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -295,7 +297,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/">
+    <link itemprop="mainEntityOfPage" href="/2017/12/19/solr的环境搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郭景峰">
@@ -316,7 +318,7 @@
             
             
               
-                深入理解javascript原型和闭包(9)--简述【执行上下文】下
+                solr的环境搭建
               
             
           </h1>
@@ -331,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-16T23:41:40+08:00">
-                2017-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T20:13:37+08:00">
+                2017-12-19
               </time>
             
 
@@ -354,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -365,8 +367,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/王福朋-深入理解javascript原型和闭包系列/" itemprop="url" rel="index">
-                    <span itemprop="name">王福朋-深入理解javascript原型和闭包系列</span>
+                  <a href="/categories/Java/服务器环境搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器环境搭建</span>
                   </a>
                 </span>
 
@@ -383,7 +385,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/12/19/solr的环境搭建/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -410,87 +412,25 @@
       
 
       
-        <blockquote><footer><strong>原文地址</strong><cite><a href="http://www.cnblogs.com/wangfupeng1988/p/3987563.html" target="_blank" rel="external">深入理解javascript原型和闭包（9）——简述【执行上下文】下</a></cite></footer></blockquote>
-<p>继续上一篇文章（<a href="/2017/04/16/深入理解javascript原型和闭包-8-简述【执行上下文】上/" title="深入理解javascript原型和闭包-8-简述【执行上下文】上">深入理解javascript原型和闭包-8-简述【执行上下文】上</a>）的内容。</p>
-<p>上一篇我们讲到在全局环境下的代码段中，执行上下文环境中有如何数据：</p>
-<p>变量、函数表达式——变量声明，默认赋值为undefined；<br>this——赋值；<br>函数声明——赋值；</p>
-<p>如果在函数中，除了以上数据之外，还会有其他数据。先看以下代码：<br><img src="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-1.png" alt="9-1.png" title=""><br>以上代码展示了在函数体的语句执行之前，arguments变量和函数的参数都已经被赋值。从这里可以看出，
-                                                       <span style="background-color: #87daff;">函数每被调用一次，都会产生一个新的执行上下文环境。因为不同的调用可能就会有不同的参数</span>
-                                                     。</p>
-<p>另外一点不同在于，
-                    <span style="background-color: #87daff;">函数在定义的时候（不是调用的时候），就已经确定了函数体内部自由变量的作用域</span>
-                  。至于“自由变量”和“作用域”是后面要专门拿出来讲述的重点，这里就先点到为止。用一个例子说明一下：<br><img src="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-2.png" alt="9-2.png" title=""><br>好了，总结完了函数的附加内容，我们就此要全面总结一下上下文环境的数据内容。<br><a id="more"></a></p>
-<p>全局代码的上下文环境数据内容为：<br>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top" width="217">
-            <p>普通变量（包括函数表达式），</p>
-            <p>如： var a = 10;</p>
-            </td>
-            <td valign="top" width="236">
-            <p>声明（默认赋值为undefined）</p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="217">
-            <p>函数声明，</p>
-            <p>如： function fn() { }</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="217">
-            <p>this</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</p>
-<p>如果代码段是函数体，那么在此基础上需要附加：</p>
-
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top" width="217">
-            <p>参数</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="217">
-            <p>arguments</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="217">
-            <p>自由变量的取值作用域</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<p>给执行上下文环境下一个通俗的定义——
-                                      <span style="background-color: #87daff;">在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空</span>
-                                    。<br>
-  <small>了解了执行上下文环境中的数据信息，你就不用再去死记硬背那些可恶的面试题了。理解了就不用背诵！</small>
-。</p>
-<p>讲完了上下文环境，又来了新的问题——在执行js代码时，会有数不清的函数调用次数，会产生许多个上下文环境。这么多上下文环境该如何管理，以及如何销毁而释放内存呢？下一节将通过“执行上下文栈”来解释这个问题。</p>
-<p>不过别着急，在解释“执行上下文栈”之前，还需要把this说一下，this还是挺重要的。</p>
-<p>说完this，接着说执行上下文栈。</p>
+        <h2 id="系统环境检查"><a href="#系统环境检查" class="headerlink" title="系统环境检查"></a>系统环境检查</h2><p>根据Solr的官方说明，从Solr 6（包括SolrJ客户端库）开始，Java支持版本最低为Java 8。</p>
+<p>这里以Solr7.0.1版本作为示例。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>首先，<a href="http://archive.apache.org/dist/lucene/solr/" target="_blank" rel="external">进入下载页面</a>,找到solr-7.0.1.tgz。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>进入下载的文件夹，解压到app目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">tar zxf solr-7.0.1.tgz -C app</div></pre></td></tr></table></figure><br><a id="more"></a></p>
+<h2 id="单机版运行模式"><a href="#单机版运行模式" class="headerlink" title="单机版运行模式"></a>单机版运行模式</h2><p>进入到解压目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd app/solr-7.0.1/</div></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/solr start</div></pre></td></tr></table></figure></p>
+<p>打开浏览器，访问http://192.168.147.191:8983/solr（注意更换IP）<br>看到如下画面，单机版完成，然后重复安装多2台机器。</p>
+<img src="/2017/12/19/solr的环境搭建/QQ图片20171219215719.png" alt="QQ图片20171219215719.png" title="">
+<h2 id="SolrCloud运行模式"><a href="#SolrCloud运行模式" class="headerlink" title="SolrCloud运行模式"></a>SolrCloud运行模式</h2><p>在使用前，必须有一个ZooKeeper服务器，并且已启动服务，安装过程参考<a href="/2017/11/12/zookeeper的环境搭建/" title="zookeeper的环境搭建">zookeeper的环境搭建</a>。</p>
+<p>停止刚才运行的单机实例(如果有启动)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/solr stop</div></pre></td></tr></table></figure></p>
+<p>以SolrCloud模式运行Solr实例，-could指定启动方式，-z 后面指定ZooKeeper服务器地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/solr start -cloud -z 192.168.147.191:2181</div></pre></td></tr></table></figure></p>
+<p>打开浏览器，访问任意节点http地址（如http://192.168.147.191:8983/solr），此时菜单会多出个cloud选项。</p>
+<img src="/2017/12/19/solr的环境搭建/QQ图片20171219222340.png" alt="QQ图片20171219222340.png" title="">
+<br>
+<p>以SolrCloud运行模式再启动其他2台机器,能够访问到对应http地址说明启动成功。</p>
+<p>创建一个Collections ，Collections 名称随便，config set使用默认就好，numShards分片数量默认，replicationFactor分片副本数量定义为3（为了看到集群状态，定义为我配置的机器节点数量）<br><img src="/2017/12/19/solr的环境搭建/QQ图片20171219233743.png" alt="QQ图片20171219233743.png" title=""></p>
+<p>然后可以在cloud的graph中看到以下画面，说明SolrCloud搭建完成。<br><img src="/2017/12/19/solr的环境搭建/QQ图片20171219234500.png" alt="QQ图片20171219234500.png" title=""></p>
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>在使用solr脚本的时候，默认执行bin目录下的solr.in.sh里面的配置，可以把一些启动参数配置进去，如ZooKeeper服务地址，配完启动的时候就不需要加-z参数啦。</p>
+<h2 id="搭建时遇到的问题"><a href="#搭建时遇到的问题" class="headerlink" title="搭建时遇到的问题"></a>搭建时遇到的问题</h2><p>暂无。</p>
 
       
     </div>
@@ -520,11 +460,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/Solr/" rel="tag"># Solr</a>
           
-            <a href="/tags/原型链/" rel="tag"># 原型链</a>
-          
-            <a href="/tags/闭包/" rel="tag"># 闭包</a>
+            <a href="/tags/SolrCloud/" rel="tag"># SolrCloud</a>
           
         </div>
       
@@ -537,18 +475,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/17/深入理解javascript原型和闭包-10-this/" rel="next" title="深入理解javascript原型和闭包(10)--this">
-                <i class="fa fa-chevron-left"></i> 深入理解javascript原型和闭包(10)--this
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/16/深入理解javascript原型和闭包-8-简述【执行上下文】上/" rel="prev" title="深入理解javascript原型和闭包(8)--简述【执行上下文】上">
-                深入理解javascript原型和闭包(8)--简述【执行上下文】上 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/12/zookeeper的环境搭建/" rel="prev" title="zookeeper的环境搭建">
+                zookeeper的环境搭建 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -598,8 +532,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -683,6 +626,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境检查"><span class="nav-number">1.</span> <span class="nav-text">系统环境检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单机版运行模式"><span class="nav-number">4.</span> <span class="nav-text">单机版运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SolrCloud运行模式"><span class="nav-number">5.</span> <span class="nav-text">SolrCloud运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-number">6.</span> <span class="nav-text">tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建时遇到的问题"><span class="nav-number">7.</span> <span class="nav-text">搭建时遇到的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,原型链,闭包," />
+  <meta name="keywords" content="zookeeper,zookeeper集群," />
 
 
 
@@ -87,20 +87,17 @@
 
 
 
-<meta name="description" content="原文地址深入理解javascript原型和闭包（9）——简述【执行上下文】下 继续上一篇文章（深入理解javascript原型和闭包-8-简述【执行上下文】上）的内容。 上一篇我们讲到在全局环境下的代码段中，执行上下文环境中有如何数据： 变量、函数表达式——变量声明，默认赋值为undefined；this——赋值；函数声明——赋值； 如果在函数中，除了以上数据之外，还会有其他数据。先看以下代码：以">
-<meta name="keywords" content="javascript,原型链,闭包">
+<meta name="description" content="系统环境检查 zookeeper依赖的JDK要高于1.6版本。 集群模式至少要3个节点，原因与选举机制有关，2个节点无法实现高可用，不如单机  下载进入下载页面,下载最新版本，这里使用的是zookeeper-3.4.5.tar.gz。## 安装安装过程非常简单，进入下载的文件夹，解压到app目录下12cd ~tar zxf zookeeper-3.4.5.tar.gz -C app 配置单机版的配">
+<meta name="keywords" content="zookeeper,zookeeper集群">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解javascript原型和闭包(9)--简述【执行上下文】下">
-<meta property="og:url" content="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/index.html">
+<meta property="og:title" content="zookeeper的环境搭建">
+<meta property="og:url" content="/2017/11/12/zookeeper的环境搭建/index.html">
 <meta property="og:site_name" content="Kurt's blog">
-<meta property="og:description" content="原文地址深入理解javascript原型和闭包（9）——简述【执行上下文】下 继续上一篇文章（深入理解javascript原型和闭包-8-简述【执行上下文】上）的内容。 上一篇我们讲到在全局环境下的代码段中，执行上下文环境中有如何数据： 变量、函数表达式——变量声明，默认赋值为undefined；this——赋值；函数声明——赋值； 如果在函数中，除了以上数据之外，还会有其他数据。先看以下代码：以">
-<meta property="og:image" content="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-1.png">
-<meta property="og:image" content="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-2.png">
-<meta property="og:updated_time" content="2018-05-19T18:12:26.865Z">
+<meta property="og:description" content="系统环境检查 zookeeper依赖的JDK要高于1.6版本。 集群模式至少要3个节点，原因与选举机制有关，2个节点无法实现高可用，不如单机  下载进入下载页面,下载最新版本，这里使用的是zookeeper-3.4.5.tar.gz。## 安装安装过程非常简单，进入下载的文件夹，解压到app目录下12cd ~tar zxf zookeeper-3.4.5.tar.gz -C app 配置单机版的配">
+<meta property="og:updated_time" content="2018-05-20T04:03:32.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解javascript原型和闭包(9)--简述【执行上下文】下">
-<meta name="twitter:description" content="原文地址深入理解javascript原型和闭包（9）——简述【执行上下文】下 继续上一篇文章（深入理解javascript原型和闭包-8-简述【执行上下文】上）的内容。 上一篇我们讲到在全局环境下的代码段中，执行上下文环境中有如何数据： 变量、函数表达式——变量声明，默认赋值为undefined；this——赋值；函数声明——赋值； 如果在函数中，除了以上数据之外，还会有其他数据。先看以下代码：以">
-<meta name="twitter:image" content="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-1.png">
+<meta name="twitter:title" content="zookeeper的环境搭建">
+<meta name="twitter:description" content="系统环境检查 zookeeper依赖的JDK要高于1.6版本。 集群模式至少要3个节点，原因与选举机制有关，2个节点无法实现高可用，不如单机  下载进入下载页面,下载最新版本，这里使用的是zookeeper-3.4.5.tar.gz。## 安装安装过程非常简单，进入下载的文件夹，解压到app目录下12cd ~tar zxf zookeeper-3.4.5.tar.gz -C app 配置单机版的配">
 
 
 
@@ -128,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/"/>
+  <link rel="canonical" href="/2017/11/12/zookeeper的环境搭建/"/>
 
 
 
 
 
-  <title> 深入理解javascript原型和闭包(9)--简述【执行上下文】下 | Kurt's blog </title>
+  <title> zookeeper的环境搭建 | Kurt's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -295,7 +292,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/">
+    <link itemprop="mainEntityOfPage" href="/2017/11/12/zookeeper的环境搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郭景峰">
@@ -316,7 +313,7 @@
             
             
               
-                深入理解javascript原型和闭包(9)--简述【执行上下文】下
+                zookeeper的环境搭建
               
             
           </h1>
@@ -331,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-16T23:41:40+08:00">
-                2017-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-12T11:12:09+08:00">
+                2017-11-12
               </time>
             
 
@@ -354,19 +351,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/王福朋-深入理解javascript原型和闭包系列/" itemprop="url" rel="index">
-                    <span itemprop="name">王福朋-深入理解javascript原型和闭包系列</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -383,7 +369,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/11/12/zookeeper的环境搭建/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -410,87 +396,30 @@
       
 
       
-        <blockquote><footer><strong>原文地址</strong><cite><a href="http://www.cnblogs.com/wangfupeng1988/p/3987563.html" target="_blank" rel="external">深入理解javascript原型和闭包（9）——简述【执行上下文】下</a></cite></footer></blockquote>
-<p>继续上一篇文章（<a href="/2017/04/16/深入理解javascript原型和闭包-8-简述【执行上下文】上/" title="深入理解javascript原型和闭包-8-简述【执行上下文】上">深入理解javascript原型和闭包-8-简述【执行上下文】上</a>）的内容。</p>
-<p>上一篇我们讲到在全局环境下的代码段中，执行上下文环境中有如何数据：</p>
-<p>变量、函数表达式——变量声明，默认赋值为undefined；<br>this——赋值；<br>函数声明——赋值；</p>
-<p>如果在函数中，除了以上数据之外，还会有其他数据。先看以下代码：<br><img src="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-1.png" alt="9-1.png" title=""><br>以上代码展示了在函数体的语句执行之前，arguments变量和函数的参数都已经被赋值。从这里可以看出，
-                                                       <span style="background-color: #87daff;">函数每被调用一次，都会产生一个新的执行上下文环境。因为不同的调用可能就会有不同的参数</span>
-                                                     。</p>
-<p>另外一点不同在于，
-                    <span style="background-color: #87daff;">函数在定义的时候（不是调用的时候），就已经确定了函数体内部自由变量的作用域</span>
-                  。至于“自由变量”和“作用域”是后面要专门拿出来讲述的重点，这里就先点到为止。用一个例子说明一下：<br><img src="/2017/04/16/深入理解javascript原型和闭包-9-简述【执行上下文】下/9-2.png" alt="9-2.png" title=""><br>好了，总结完了函数的附加内容，我们就此要全面总结一下上下文环境的数据内容。<br><a id="more"></a></p>
-<p>全局代码的上下文环境数据内容为：<br>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top" width="217">
-            <p>普通变量（包括函数表达式），</p>
-            <p>如： var a = 10;</p>
-            </td>
-            <td valign="top" width="236">
-            <p>声明（默认赋值为undefined）</p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="217">
-            <p>函数声明，</p>
-            <p>如： function fn() { }</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="217">
-            <p>this</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</p>
-<p>如果代码段是函数体，那么在此基础上需要附加：</p>
-
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top" width="217">
-            <p>参数</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="217">
-            <p>arguments</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="217">
-            <p>自由变量的取值作用域</p>
-            </td>
-            <td valign="top" width="236">
-            <p>赋值</p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<p>给执行上下文环境下一个通俗的定义——
-                                      <span style="background-color: #87daff;">在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空</span>
-                                    。<br>
-  <small>了解了执行上下文环境中的数据信息，你就不用再去死记硬背那些可恶的面试题了。理解了就不用背诵！</small>
-。</p>
-<p>讲完了上下文环境，又来了新的问题——在执行js代码时，会有数不清的函数调用次数，会产生许多个上下文环境。这么多上下文环境该如何管理，以及如何销毁而释放内存呢？下一节将通过“执行上下文栈”来解释这个问题。</p>
-<p>不过别着急，在解释“执行上下文栈”之前，还需要把this说一下，this还是挺重要的。</p>
-<p>说完this，接着说执行上下文栈。</p>
+        <h2 id="系统环境检查"><a href="#系统环境检查" class="headerlink" title="系统环境检查"></a>系统环境检查</h2><ol>
+<li>zookeeper依赖的JDK要高于1.6版本。</li>
+<li>集群模式至少要3个节点，原因与选举机制有关，2个节点无法实现高可用，不如单机</li>
+</ol>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><a href="http://zookeeper.apache.org/releases.html#download" target="_blank" rel="external">进入下载页面</a>,下载最新版本，这里使用的是zookeeper-3.4.5.tar.gz。<br><br>## 安装<br>安装过程非常简单，进入下载的文件夹，解压到app目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">tar zxf zookeeper-3.4.5.tar.gz -C app</div></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>单机版的配置非常简单，只需要配置一个dataDir就可以了，这里以集群配置为例。</p>
+<a id="more"></a> 
+<p> 进入配置文件目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd app/zookeeper-3.4.5/conf</div></pre></td></tr></table></figure></p>
+<p> 默认里面是没有zoo.cfg配置文件的，但是提供了一个模板文件zoo_sample.cfg，直接复制就行了。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp zoo_sample.cfg zoo.cfg</div></pre></td></tr></table></figure></p>
+<p> 使用vi编辑zoo.cfg内容<br> 首先配置dataDir，这个是数据存放目录，我把它放在安装目录的data目录下，这个目录一会还有用，可以手动先创建。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dataDir=/home/hadoop/app/zookeeper-3.4.5/data</div></pre></td></tr></table></figure></p>
+<p>然后在最后面添加下面服务节点的地址。</p>
+<p>这里server.1，server.2，server.3，后面的数字代表服务器ID，后面要把ID配置进myid文件。</p>
+<p>zk1,zk2,zk3表示的是zookeeper服务器地址的主机名称，这里我已经把IP写入我本机的host里面了，所以这里我用主机名代替IP地址了。端口不用管，用默认的就行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server.1 = zk1:2888:3888</div><div class="line">server.2 = zk2:2888:3888</div><div class="line">server.3 = zk3:2888:3888</div></pre></td></tr></table></figure>
+<p> 配置好后，把配置好的zoo.cfg文件复制到其它2台机器对应目录下。</p>
+<p> 最后，也是最重要的，为每个zookeeper节点配置一个ID，每一台机器都需要，因为server.id不一样。</p>
+<p> 进入到zookeeper安装目录，创建data数据文件目录并且进入该目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir data &amp;&amp; cd data</div></pre></td></tr></table></figure></p>
+<p>执行下面的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo 1 &gt; myid</div></pre></td></tr></table></figure>
+<p><em><strong>注意</strong>：1代表的是刚才配置的zookeeper节点对应的ID，比如zk1对应的server.1中的ID就是1，相应的zk2就是2，以此类推。myid是输出文件的名称，这个名称是固定的。</em></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>配置好各个服务器上的myid后，进入到各个服务器的zookeeper安装目录，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/zkServer.sh start</div></pre></td></tr></table></figure></p>
+<p>查看当前机器状态,如果所有机器以及启动成功，其中一台机器将会显示为Mode: leader，另外的机器将会显示Mode: follower。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/zkServer.sh status</div></pre></td></tr></table></figure></p>
+<p>至此，zookeeper集群安装完毕。</p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>暂无。</p>
 
       
     </div>
@@ -520,11 +449,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/zookeeper/" rel="tag"># zookeeper</a>
           
-            <a href="/tags/原型链/" rel="tag"># 原型链</a>
-          
-            <a href="/tags/闭包/" rel="tag"># 闭包</a>
+            <a href="/tags/zookeeper集群/" rel="tag"># zookeeper集群</a>
           
         </div>
       
@@ -537,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/17/深入理解javascript原型和闭包-10-this/" rel="next" title="深入理解javascript原型和闭包(10)--this">
-                <i class="fa fa-chevron-left"></i> 深入理解javascript原型和闭包(10)--this
+              <a href="/2017/12/19/solr的环境搭建/" rel="next" title="solr的环境搭建">
+                <i class="fa fa-chevron-left"></i> solr的环境搭建
               </a>
             
           </div>
@@ -547,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/16/深入理解javascript原型和闭包-8-简述【执行上下文】上/" rel="prev" title="深入理解javascript原型和闭包(8)--简述【执行上下文】上">
-                深入理解javascript原型和闭包(8)--简述【执行上下文】上 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/03/关于集群、分布式、伪分布式的概念/" rel="prev" title="关于集群、分布式、伪分布式的概念理解">
+                关于集群、分布式、伪分布式的概念理解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -598,8 +525,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -683,6 +619,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境检查"><span class="nav-number">1.</span> <span class="nav-text">系统环境检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行"><span class="nav-number">4.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">5.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
