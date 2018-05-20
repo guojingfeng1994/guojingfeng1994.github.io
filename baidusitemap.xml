@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>/2017/05/14/JS%E4%B8%ADthis%E7%9A%84%E6%8C%87%E5%90%91%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-05-20T03:06:08.209Z</lastmod>
+    <data>
+        <display>
+        <title>JS中this的指向总结</title>
+        <pubTime>2017-05-13T18:17:28.000Z</pubTime>
+        
+        <tag>this</tag>
+         
+        <tag>this指向</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>/2017/12/19/solr%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2018-05-20T03:03:07.175Z</lastmod>
     <data>
@@ -46,28 +68,6 @@
            
              
               <breadCrumb title="Java" url="/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>/2017/05/14/JS%E4%B8%ADthis%E7%9A%84%E6%8C%87%E5%90%91%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-05-20T02:49:00.149Z</lastmod>
-    <data>
-        <display>
-        <title>JS中this的指向总结</title>
-        <pubTime>2017-05-13T18:17:28.000Z</pubTime>
-        
-        <tag>this</tag>
-         
-        <tag>this指向</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="/categories/JavaScript/"/>
           
         </display>
     </data>
