@@ -1,6 +1,8 @@
 ---
 title: 深入理解javascript原型和闭包(12)--简介【作用域】
-categories: 王福朋-深入理解javascript原型和闭包系列
+categories:
+  - JavaScript
+  - 王福朋-深入理解javascript原型和闭包系列
 tags:
   - javascript
   - 原型链
