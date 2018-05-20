@@ -2,6 +2,7 @@
 title: zookeeper的环境搭建
 categories:
   - Java
+  - 服务器环境搭建
 date: 2017-11-12 11:12:09
 tags:
   - zookeeper
