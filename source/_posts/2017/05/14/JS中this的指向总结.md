@@ -26,6 +26,7 @@ var a = 2;
 foo(); // 2
 {% endcodeblock %}
 
+<!-- more -->
 {% codeblock lang:JavaScript %}
 // 严格模式
 

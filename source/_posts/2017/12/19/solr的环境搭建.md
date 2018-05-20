@@ -1,5 +1,5 @@
 ---
-title: solr环境搭建
+title: solr的环境搭建
 categories: 
   - Java
   - 服务器环境搭建
@@ -43,7 +43,7 @@ bin/solr start
 
 ## SolrCloud运行模式
 
-在使用前，必须有一个ZooKeeper服务器，并且已启动服务，安装过程参考。
+在使用前，必须有一个ZooKeeper服务器，并且已启动服务，安装过程参考{% post_link zookeeper的环境搭建 zookeeper的环境搭建 %}。
 
 停止刚才运行的单机实例(如果有启动)
 {% codeblock lang:shell %}
