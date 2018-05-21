@@ -23,7 +23,7 @@ tar zxf zookeeper-3.4.5.tar.gz -C app
 {% endcodeblock %}
 
 ## 配置
-单机版的配置非常简单，只需要配置一个dataDir就可以了，这里以集群配置为例。
+单机版的配置非常简单，只需要配置一个dataDir就可以了，不然数据会被放到临时目录，一关机就世界末日了。这里以集群配置为例。
 
 <!-- more --> 
  进入配置文件目录
@@ -84,6 +84,39 @@ bin/zkServer.sh status
 {% endcodeblock %}
 
 至此，zookeeper集群安装完毕。
+
+## 附上最后的配置文件
+
+{% codeblock lang:shell %}
+# The number of milliseconds of each tick
+tickTime=2000
+# The number of ticks that the initial
+# synchronization phase can take
+initLimit=10
+# The number of ticks that can pass between
+# sending a request and getting an acknowledgement
+syncLimit=5
+# the directory where the snapshot is stored.
+# do not use /tmp for storage, /tmp here is just
+# example sakes.
+dataDir=/home/hadoop/app/zookeeper-3.4.5/data
+# the port at which the clients will connect
+clientPort=2181
+#
+# Be sure to read the maintenance section of the
+# administrator guide before turning on autopurge.
+#
+# http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance
+#
+# The number of snapshots to retain in dataDir
+#autopurge.snapRetainCount=3
+# Purge task interval in hours
+# Set to "0" to disable auto purge feature
+#autopurge.purgeInterval=1
+server.1 = zk1:2888:3888
+server.2 = zk2:2888:3888
+server.3 = zk3:2888:3888
+{% endcodeblock %}
  
 ## 遇到的问题
 暂无。
