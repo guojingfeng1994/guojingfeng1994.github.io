@@ -94,7 +94,7 @@
 <meta property="og:url" content="/2017/11/12/zookeeper的环境搭建/index.html">
 <meta property="og:site_name" content="Kurt's blog">
 <meta property="og:description" content="系统环境检查 zookeeper依赖的JDK要高于1.6版本。 集群模式至少要3个节点，原因与选举机制有关，2个节点无法实现高可用，不如单机  下载进入下载页面,下载最新版本，这里使用的是zookeeper-3.4.5.tar.gz。## 安装安装过程非常简单，进入下载的文件夹，解压到app目录下12cd ~tar zxf zookeeper-3.4.5.tar.gz -C app 配置单机版的配">
-<meta property="og:updated_time" content="2018-05-20T04:09:33.755Z">
+<meta property="og:updated_time" content="2018-05-21T02:22:27.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zookeeper的环境搭建">
 <meta name="twitter:description" content="系统环境检查 zookeeper依赖的JDK要高于1.6版本。 集群模式至少要3个节点，原因与选举机制有关，2个节点无法实现高可用，不如单机  下载进入下载页面,下载最新版本，这里使用的是zookeeper-3.4.5.tar.gz。## 安装安装过程非常简单，进入下载的文件夹，解压到app目录下12cd ~tar zxf zookeeper-3.4.5.tar.gz -C app 配置单机版的配">
@@ -412,7 +412,7 @@
 <li>集群模式至少要3个节点，原因与选举机制有关，2个节点无法实现高可用，不如单机</li>
 </ol>
 <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><a href="http://zookeeper.apache.org/releases.html#download" target="_blank" rel="external">进入下载页面</a>,下载最新版本，这里使用的是zookeeper-3.4.5.tar.gz。<br><br>## 安装<br>安装过程非常简单，进入下载的文件夹，解压到app目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">tar zxf zookeeper-3.4.5.tar.gz -C app</div></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>单机版的配置非常简单，只需要配置一个dataDir就可以了，这里以集群配置为例。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>单机版的配置非常简单，只需要配置一个dataDir就可以了，不然数据会被放到临时目录，一关机就世界末日了。这里以集群配置为例。</p>
 <a id="more"></a> 
 <p> 进入配置文件目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd app/zookeeper-3.4.5/conf</div></pre></td></tr></table></figure></p>
 <p> 默认里面是没有zoo.cfg配置文件的，但是提供了一个模板文件zoo_sample.cfg，直接复制就行了。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp zoo_sample.cfg zoo.cfg</div></pre></td></tr></table></figure></p>
@@ -430,6 +430,7 @@
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>配置好各个服务器上的myid后，进入到各个服务器的zookeeper安装目录，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/zkServer.sh start</div></pre></td></tr></table></figure></p>
 <p>查看当前机器状态,如果所有机器以及启动成功，其中一台机器将会显示为Mode: leader，另外的机器将会显示Mode: follower。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/zkServer.sh status</div></pre></td></tr></table></figure></p>
 <p>至此，zookeeper集群安装完毕。</p>
+<h2 id="附上最后的配置文件"><a href="#附上最后的配置文件" class="headerlink" title="附上最后的配置文件"></a>附上最后的配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"># The number of milliseconds of each tick</div><div class="line">tickTime=2000</div><div class="line"># The number of ticks that the initial</div><div class="line"># synchronization phase can take</div><div class="line">initLimit=10</div><div class="line"># The number of ticks that can pass between</div><div class="line"># sending a request and getting an acknowledgement</div><div class="line">syncLimit=5</div><div class="line"># the directory where the snapshot is stored.</div><div class="line"># do not use /tmp for storage, /tmp here is just</div><div class="line"># example sakes.</div><div class="line">dataDir=/home/hadoop/app/zookeeper-3.4.5/data</div><div class="line"># the port at which the clients will connect</div><div class="line">clientPort=2181</div><div class="line">#</div><div class="line"># Be sure to read the maintenance section of the</div><div class="line"># administrator guide before turning on autopurge.</div><div class="line">#</div><div class="line"># http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance</div><div class="line">#</div><div class="line"># The number of snapshots to retain in dataDir</div><div class="line">#autopurge.snapRetainCount=3</div><div class="line"># Purge task interval in hours</div><div class="line"># Set to &quot;0&quot; to disable auto purge feature</div><div class="line">#autopurge.purgeInterval=1</div><div class="line">server.1 = zk1:2888:3888</div><div class="line">server.2 = zk2:2888:3888</div><div class="line">server.3 = zk3:2888:3888</div></pre></td></tr></table></figure>
 <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>暂无。</p>
 
       
@@ -475,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/19/solr的环境搭建/" rel="next" title="solr的环境搭建">
-                <i class="fa fa-chevron-left"></i> solr的环境搭建
+              <a href="/2017/11/12/hadoop的环境搭建/" rel="next" title="hadoop的环境搭建">
+                <i class="fa fa-chevron-left"></i> hadoop的环境搭建
               </a>
             
           </div>
@@ -561,7 +562,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -583,7 +584,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -640,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境检查"><span class="nav-number">1.</span> <span class="nav-text">系统环境检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行"><span class="nav-number">4.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">5.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境检查"><span class="nav-number">1.</span> <span class="nav-text">系统环境检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行"><span class="nav-number">4.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附上最后的配置文件"><span class="nav-number">5.</span> <span class="nav-text">附上最后的配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">6.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
             
 
           </div>

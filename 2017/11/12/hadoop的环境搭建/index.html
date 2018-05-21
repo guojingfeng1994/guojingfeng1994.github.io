@@ -1,0 +1,880 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hadoop," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="系统环境检查 hadoop2.7之后需要Java 7以上的支持 ssh环境，用于运行sshd远程管理Hadoop守护程序。（无密登录这里早已配好，这里不再赘述）。  下载进入下载页面,下载最新版本，这里使用的是hadoop-2.8.3.tar.gz。进入下载目录，解压到app目录下12cd ~tar zxf hadoop-2.8.3.tar.gz -C app 单机模式安装配置在配置前最好把HAD">
+<meta name="keywords" content="hadoop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hadoop的环境搭建">
+<meta property="og:url" content="/2017/11/12/hadoop的环境搭建/index.html">
+<meta property="og:site_name" content="Kurt's blog">
+<meta property="og:description" content="系统环境检查 hadoop2.7之后需要Java 7以上的支持 ssh环境，用于运行sshd远程管理Hadoop守护程序。（无密登录这里早已配好，这里不再赘述）。  下载进入下载页面,下载最新版本，这里使用的是hadoop-2.8.3.tar.gz。进入下载目录，解压到app目录下12cd ~tar zxf hadoop-2.8.3.tar.gz -C app 单机模式安装配置在配置前最好把HAD">
+<meta property="og:updated_time" content="2018-05-21T07:03:26.374Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hadoop的环境搭建">
+<meta name="twitter:description" content="系统环境检查 hadoop2.7之后需要Java 7以上的支持 ssh环境，用于运行sshd远程管理Hadoop守护程序。（无密登录这里早已配好，这里不再赘述）。  下载进入下载页面,下载最新版本，这里使用的是hadoop-2.8.3.tar.gz。进入下载目录，解压到app目录下12cd ~tar zxf hadoop-2.8.3.tar.gz -C app 单机模式安装配置在配置前最好把HAD">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="/2017/11/12/hadoop的环境搭建/"/>
+
+
+
+
+
+  <title> hadoop的环境搭建 | Kurt's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?998b6e3290851e4c66c3013eb9fa0950";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <a class="fork-me-on-github" href="https://github.com/guojingfeng1994">
+        <img style="position: absolute; top: 0; left: 0; border: 0;" src="/images/forkMeOnGithub.png" alt="Fork me on GitHub">
+      </a>
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kurt's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">good good study, day day up</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-production">
+          <a href="/production" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-lightbulb-o"></i> <br />
+            
+            作品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="/2017/11/12/hadoop的环境搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郭景峰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kurt's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hadoop的环境搭建
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-12T19:19:23+08:00">
+                2017-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/服务器环境搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器环境搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/11/12/hadoop的环境搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="系统环境检查"><a href="#系统环境检查" class="headerlink" title="系统环境检查"></a>系统环境检查</h2><ol>
+<li>hadoop2.7之后需要Java 7以上的支持</li>
+<li>ssh环境，用于运行sshd远程管理Hadoop守护程序。（无密登录这里早已配好，这里不再赘述）。</li>
+</ol>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><a href="http://hadoop.apache.org/releases.html" target="_blank" rel="external">进入下载页面</a>,下载最新版本，这里使用的是hadoop-2.8.3.tar.gz。<br><br>进入下载目录，解压到app目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">tar zxf hadoop-2.8.3.tar.gz -C app</div></pre></td></tr></table></figure>
+<h2 id="单机模式安装"><a href="#单机模式安装" class="headerlink" title="单机模式安装"></a>单机模式安装</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在配置前最好把HADOOP_HOME，方便命令的执行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">done</div><div class="line"></div><div class="line">unset i</div><div class="line">unset -f pathmunge</div><div class="line">export JAVA_HOME=/home/hadoop/app/jdk1.7.0_65</div><div class="line">export HADOOP_HOME=/home/hadoop/app/hadoop-2.8.3</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin</div></pre></td></tr></table></figure></p>
+<p>进入hadoop配置文件目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd app/hadoop-2.8.3/etc/hadoop/</div></pre></td></tr></table></figure></p>
+<p>先编辑hadoop-env.sh，修改默认的JAVA_HOME为JDK安装的绝对路径，不然后面可能会报JAVA_HOME not found之类的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/home/hadoop/app/jdk1.7.0_65</div></pre></td></tr></table></figure></p>
+<p>用vi编辑core-site.xml，这个是hdfs文件系统服务器地址，在configuration中配置属性，如下所示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</div><div class="line">        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<p>编辑hdfs-site.xml，配置副本数量，一个节点也只有1个副本了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">        &lt;value&gt;1&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<p>配置mapred-site.xml，用于mapreduce计算，只用hdfs的话，上面的配置已经可以启动了</p>
+<p>默认这个文件是没有的，直接从模板复制过来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp mapred-site.xml.template mapred-site.xml</div></pre></td></tr></table></figure></p>
+<p>编辑mapred-site.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">        &lt;value&gt;yarn&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<p>配置yarn-site.xml，yarn资源调度器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h3><p>进入hadoop安装目录，使用前先格式化namenode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/hdfs namenode -format</div></pre></td></tr></table></figure></p>
+<p>启动hdfs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sbin/start-dfs.sh</div></pre></td></tr></table></figure></p>
+<p>启动yarn<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sbin/start-yarn.sh</div></pre></td></tr></table></figure></p>
+<p>浏览器访问一下namenode访问地址，http://192.168.147.131:50070/,能访问成功说明hdfs已经安装上了。</p>
+<p>mapreduce这里不测了，等下测试集群版。</p>
+<h2 id="集群安装"><a href="#集群安装" class="headerlink" title="集群安装"></a>集群安装</h2><h3 id="安装说明"><a href="#安装说明" class="headerlink" title="安装说明"></a>安装说明</h3><p>这里使用7台虚拟机配置，IP192.168.147.131、192.168.147.132…192.168.147.137对应的host主机名称为weekend01、weekend02…weekend07.</p>
+<p>01、02为namenode节点、03、04为yarn的ResourceManager节点、05、06、07为DataNode节点、JournalNode节点、nodemanager节点以及zookeeper集群。下面以一台机器的配置为例。</p>
+<h3 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h3><p>我直接改造单机版配置了（清空再重新配置），另外，hadoop的HA机制依赖于zookeeper，zookeeper安装过程参考<a href="/2017/11/12/zookeeper的环境搭建/" title="zookeeper的环境搭建">zookeeper的环境搭建</a></p>
+<p>进入hadoop的配置文件目录。</p>
+<h4 id="配置HDFS"><a href="#配置HDFS" class="headerlink" title="配置HDFS"></a>配置HDFS</h4><p>编辑hdfs-site.xml，副本数量改为3，再配置一对namenode服务的集群名称<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">  &lt;value&gt;3&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.nameservices&lt;/name&gt;</div><div class="line">  &lt;value&gt;mycluster&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<p>配置集群中包含的namenode节点名称别名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.ha.namenodes.mycluster&lt;/name&gt;</div><div class="line">  &lt;value&gt;nn1,nn2&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<p>配置namonode别名对应的IP（主机）地址和端口，用于RPC通信<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn1&lt;/name&gt;</div><div class="line">  &lt;value&gt;weekend01:9000&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn2&lt;/name&gt;</div><div class="line">  &lt;value&gt;weekend02:9000&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<p>配置namonode别名对应的IP地址和端口，用于http端口访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.namenode.http-address.mycluster.nn1&lt;/name&gt;</div><div class="line">  &lt;value&gt;weekend01:50070&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.namenode.http-address.mycluster.nn2&lt;/name&gt;</div><div class="line">  &lt;value&gt;weekend02:50070&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<p>JournalNode节点存放的位置，edits.log文件是namenode的读写日志，单机版一个namenode对应一个edit文件，HA机制把edits文件共享给所有namenode，实现数据同步，不知道的没关系，配置就行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt;</div><div class="line">  &lt;value&gt;qjournal://weekend05:8485;weekend06:8485;weekend07:8485/mycluster&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<p>配置namenode的自动切换模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.client.failover.proxy.provider.mycluster&lt;/name&gt;</div><div class="line">  &lt;value&gt;org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line"> &lt;property&gt;</div><div class="line">   &lt;name&gt;dfs.ha.automatic-failover.enabled&lt;/name&gt;</div><div class="line">   &lt;value&gt;true&lt;/value&gt;</div><div class="line"> &lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<p>配置fencing机制，主要是用于namenode切换过程中，如果active的namenode在心跳机制中超时未响应，standby的namenode就会进行自动激活（切换active状态），保证高可用。</p>
+<p>原理是先通过ssh发送一条kill的指令，保证原先的active状态是真的死了（因为有可能是网络状态不好引起的假死状态），如果当kill指令也没有返回状态的时候，也会执行一条自定义的切换脚本（这里我直接用shell(/bin/true)，表示不做其他事情）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.ha.fencing.methods&lt;/name&gt;</div><div class="line">      &lt;value&gt;sshfence&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.ha.fencing.ssh.private-key-files&lt;/name&gt;</div><div class="line">      &lt;value&gt;/home/hadoop/.ssh/id_rsa&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.ha.fencing.methods&lt;/name&gt;</div><div class="line">      &lt;value&gt;</div><div class="line">        sshfence</div><div class="line">        shell(/bin/true)</div><div class="line">      &lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div><div class="line">    &lt;property&gt;</div><div class="line">      &lt;name&gt;dfs.ha.fencing.ssh.connect-timeout&lt;/name&gt;</div><div class="line">      &lt;value&gt;30000&lt;/value&gt;</div><div class="line">    &lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<p>编辑core-site.xml，配置hdfs默认文件系统服务器、hadoop临时文件目录、journalnode存放目录、zookeeper服务器地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;fs.defaultFS&lt;/name&gt;</div><div class="line">  &lt;value&gt;hdfs://mycluster&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</div><div class="line">  &lt;value&gt;/home/hadoop/app/hadoop-2.8.3/data/&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.journalnode.edits.dir&lt;/name&gt;</div><div class="line">  &lt;value&gt;/home/hadoop/app/hadoop-2.8.3/journaldata&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line"> &lt;property&gt;</div><div class="line">   &lt;name&gt;ha.zookeeper.quorum&lt;/name&gt;</div><div class="line">   &lt;value&gt;weekend05:2181,weekend06:2181,weekend07:2181&lt;/value&gt;</div><div class="line"> &lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="配置YARN"><a href="#配置YARN" class="headerlink" title="配置YARN"></a>配置YARN</h4><p>下面是yarn-site.xml最简洁的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;yarn.resourcemanager.ha.enabled&lt;/name&gt;</div><div class="line">  &lt;value&gt;true&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">   &lt;name&gt;yarn.resourcemanager.cluster-id&lt;/name&gt;</div><div class="line">   &lt;value&gt;cluster1&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">   &lt;name&gt;yarn.resourcemanager.ha.rm-ids&lt;/name&gt;</div><div class="line">   &lt;value&gt;rm1,rm2&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">   &lt;name&gt;yarn.resourcemanager.hostname.rm1&lt;/name&gt;</div><div class="line">   &lt;value&gt;weekend03&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">   &lt;name&gt;yarn.resourcemanager.hostname.rm2&lt;/name&gt;</div><div class="line">   &lt;value&gt;weekend04&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">   &lt;name&gt;yarn.resourcemanager.webapp.address.rm1&lt;/name&gt;</div><div class="line">   &lt;value&gt;weekend03:8088&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">   &lt;name&gt;yarn.resourcemanager.webapp.address.rm2&lt;/name&gt;</div><div class="line">   &lt;value&gt;weekend04:8088&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">   &lt;name&gt;yarn.resourcemanager.zk-address&lt;/name&gt;</div><div class="line">   &lt;value&gt;weekend05:2181,weekend06:2181,weekend07:2181&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<p>编辑mapred-site.xml，和单机版一样，基本不用变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">	&lt;value&gt;yarn&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="修改slaves"><a href="#修改slaves" class="headerlink" title="修改slaves"></a>修改slaves</h4><p>slaves是指定子节点的位置，因为要在weekend01上启动namenode、在weekend03启动yarn，所以weekend01、weekend02上的slaves文件指定的是datanode的位置，weekend03、weekend04上的slaves文件指定的是nodemanager的位置</p>
+<p><strong>注意</strong>这里的DataNode节点以及nodemanager都配置在了一起，所以这个slaves文件在这里对于weekend01、02、03、04都是一样的，可以通用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">weekend05</div><div class="line">weekend06</div><div class="line">weekend07</div></pre></td></tr></table></figure>
+<p>以上配置，集群所有节点通用，也可以把配好的这台机器上的hadoop安装目录整个拷贝过去其他的机器</p>
+<p>进入app目录，执行复制命令，以复制到weekend02为例（建议先删除doc文件，在share目录下，不然那等待时间有你受的）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r hadoop-2.8.3/ weekend02://home/hadoop/app/</div></pre></td></tr></table></figure></p>
+<h3 id="运行测试-1"><a href="#运行测试-1" class="headerlink" title="运行测试"></a>运行测试</h3><p>weekend01上执行下面命令</p>
+<p>在ZooKeeper中初始化HA状态，请先保证zookeeper已经正常启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/hdfs zkfc -formatZK</div></pre></td></tr></table></figure></p>
+<p>启动HDFS，第一次执行的时候，出现了下面的问题1，问题描述及解决请看最后，解决后可以看到namenode已经启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sbin/hadoop-daemon.sh start namenode</div></pre></td></tr></table></figure></p>
+<p>在对weekend01的namenode进行格式化后，在weekend02执行同步命令并进入standby模式，然后再启动namenode进程，HA启动就完成了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hdfs namenode -bootstrapStandby</div><div class="line">sbin/hadoop-daemon.sh start namenode</div></pre></td></tr></table></figure></p>
+<p>如果要测试namenode能否自动切换，把active节点kill掉，正常情况下等待一定时间，原先standby的机器就会变成active，kill掉的再启动，会变成standby状态。</p>
+<p>启动浏览器访问namenode地址，如：http://192.168.147.131:50070，发现问题2，2个nnamenode都处于standby状态。</p>
+<p>接下来启动weekend03、04上的ResourceManager，访问任意其中一台地址，如：http://192.168.147.133:8088，看到页面，说明启动成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sbin/yarn-daemon.sh start resourcemanager</div></pre></td></tr></table></figure></p>
+<p>接下来启动weekend05、06、07上的nodemanager节点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sbin/yarn-daemon.sh start nodemanager</div></pre></td></tr></table></figure></p>
+<p>启动完成后，写一个测试文件用于测试HDFS和mapreduce，文件内容大致如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hello tom</div><div class="line">hello jerry</div><div class="line">hello baby</div><div class="line">i love you baby</div></pre></td></tr></table></figure></p>
+<p>生成文件上传到hdfs目录,这里上传到新建文件夹/wordcount/input下，可以在namenode管理界面看到已经上传成功，hdfs没问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hadoop fs -mkdir /wordcount</div><div class="line">hadoop fs -mkdir /wordcount/input</div><div class="line">hadoop fs -put word.txt /wordcount/input</div></pre></td></tr></table></figure></p>
+<p>接下里测试mapreduce<br>进入到hadoop提供的mapreduce例子目录/home/hadoop/app/hadoop-2.8.3/share/hadoop/mapreduce，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hadoop jar hadoop-mapreduce-examples-2.8.3.jar wordcount /wordcount/input /wordcount/output</div></pre></td></tr></table></figure></p>
+<p>运行完后会自动生成一个输出文件夹，看下计算结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hadoop fs -ls /wordcount/output</div><div class="line">hadoop fs -cat /wordcount/output/part-r-00000</div></pre></td></tr></table></figure></p>
+<p>得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">baby    2</div><div class="line">hello   3</div><div class="line">i       1</div><div class="line">jerry   1</div><div class="line">love    1</div><div class="line">tom     1</div><div class="line">you     1</div></pre></td></tr></table></figure></p>
+<p>OK，至此，hadoop的HA集群搭建完毕，边搭边写可能有点乱，在此只是做一个记录，方便下次安装，所以就将就下吧。</p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><p>执行sbin/start-dfs.sh命令后，使用jps查看，发现namenode并没有启动，其他机器上也没有任何进程启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[hadoop@weekend01 hadoop-2.8.3]$ jps</div><div class="line">2904 Jps</div></pre></td></tr></table></figure>
+<h4 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h4><p>进入logs目录，查看日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">less hadoop-hadoop-namenode-weekend01.log</div></pre></td></tr></table></figure></p>
+<p>翻阅查看注意到提示，没有对namenode进行格式化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">2017-11-12 22:26:54,111 INFO org.mortbay.log: Stopped HttpServer2$SelectChannelConnectorWithSafeStartup@weekend01:50070</div><div class="line">2017-11-12 22:26:54,111 WARN org.apache.hadoop.http.HttpServer2: HttpServer Acceptor: isRunning is false. Rechecking.</div><div class="line">2017-11-12 22:26:54,111 WARN org.apache.hadoop.http.HttpServer2: HttpServer Acceptor: isRunning is false</div><div class="line">2017-11-12 22:26:54,114 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Stopping NameNode metrics system...</div><div class="line">2017-11-12 22:26:54,115 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: NameNode metrics system stopped.</div><div class="line">2017-11-12 22:26:54,115 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: NameNode metrics system shutdown complete.</div><div class="line">2017-11-12 22:26:54,115 ERROR org.apache.hadoop.hdfs.server.namenode.NameNode: Failed to start namenode.</div><div class="line">org.apache.hadoop.hdfs.server.common.InconsistentFSStateException: Directory /home/hadoop/app/hadoop-2.8.3/data/dfs/name is in an inconsistent state: storage directory does not exist or is not accessible.</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverStorageDirs(FSImage.java:369)</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverTransitionRead(FSImage.java:220)</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFSImage(FSNamesystem.java:1044)</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:707)</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:696)</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.&lt;init&gt;(NameNode.java:906)</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.&lt;init&gt;(NameNode.java:885)</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1626)</div><div class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:1694)</div><div class="line">2017-11-12 22:26:54,117 INFO org.apache.hadoop.util.ExitUtil: Exiting with status 1</div><div class="line">2017-11-12 22:26:54,136 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: SHUTDOWN_MSG: </div><div class="line">/************************************************************</div><div class="line">SHUTDOWN_MSG: Shutting down NameNode at weekend01/192.168.147.131</div><div class="line">************************************************************/</div></pre></td></tr></table></figure></p>
+<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p>要解决问题1，执行一次namenode的格式化</p>
+<p>在格式化之前，先启动所有journalnode节点上的journalnode进程，不然会出现连接不上的错误而无法格式化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sbin/hadoop-daemon.sh start journalnode</div></pre></td></tr></table></figure>
+<p>执行对namenode的格式化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hdfs namenode -format</div></pre></td></tr></table></figure></p>
+<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h3><p>2个nnamenode都处于standby状态</p>
+<h4 id="解决-1"><a href="#解决-1" class="headerlink" title="解决"></a>解决</h4><p>启动namonode前先启动zkfc就行了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sbin/hadoop-daemon.sh start zkfc</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hadoop/" rel="tag"># hadoop</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/19/solr的环境搭建/" rel="next" title="solr的环境搭建">
+                <i class="fa fa-chevron-left"></i> solr的环境搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/12/zookeeper的环境搭建/" rel="prev" title="zookeeper的环境搭建">
+                zookeeper的环境搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="郭景峰" />
+          <p class="site-author-name" itemprop="name">郭景峰</p>
+           
+              <p class="site-description motion-element" itemprop="description">将写bug进行到底</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/guojingfeng1994" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=321245599" target="_blank" title="NeteaseCloudMusic">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  NeteaseCloudMusic
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        <div id="neteaseCloudMusic">
+   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=470795480&auto=0&height=66"></iframe>
+</div>
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境检查"><span class="nav-number">1.</span> <span class="nav-text">系统环境检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单机模式安装"><span class="nav-number">3.</span> <span class="nav-text">单机模式安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行测试"><span class="nav-number">3.2.</span> <span class="nav-text">运行测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集群安装"><span class="nav-number">4.</span> <span class="nav-text">集群安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装说明"><span class="nav-number">4.1.</span> <span class="nav-text">安装说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-1"><span class="nav-number">4.2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置HDFS"><span class="nav-number">4.2.1.</span> <span class="nav-text">配置HDFS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置YARN"><span class="nav-number">4.2.2.</span> <span class="nav-text">配置YARN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改slaves"><span class="nav-number">4.2.3.</span> <span class="nav-text">修改slaves</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行测试-1"><span class="nav-number">4.3.</span> <span class="nav-text">运行测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">5.</span> <span class="nav-text">遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题1"><span class="nav-number">5.1.</span> <span class="nav-text">问题1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#日志"><span class="nav-number">5.1.1.</span> <span class="nav-text">日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决"><span class="nav-number">5.1.2.</span> <span class="nav-text">解决</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题2"><span class="nav-number">5.2.</span> <span class="nav-text">问题2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决-1"><span class="nav-number">5.2.1.</span> <span class="nav-text">解决</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">郭景峰</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "9140e1f9286146a8b6c1564740b340fa",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
