@@ -565,6 +565,7 @@
           
             <h2 id="系统环境检查"><a href="#系统环境检查" class="headerlink" title="系统环境检查"></a>系统环境检查</h2><ol>
 <li>hadoop2.7之后需要Java 7以上的支持</li>
+<li>hadoop的HA机制依赖于ZooKeeper，安装请参考<a href="/2017/11/12/zookeeper的环境搭建/" title="zookeeper的环境搭建">zookeeper的环境搭建</a></li>
 <li>ssh环境，用于运行sshd远程管理Hadoop守护程序。（无密登录这里早已配好，这里不再赘述）。</li>
 </ol>
 <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><a href="http://hadoop.apache.org/releases.html" target="_blank" rel="external">进入下载页面</a>,下载最新版本，这里使用的是hadoop-2.8.3.tar.gz。<br><br>进入下载目录，解压到app目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">tar zxf hadoop-2.8.3.tar.gz -C app</div></pre></td></tr></table></figure>
@@ -2012,7 +2013,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
