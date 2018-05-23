@@ -94,7 +94,7 @@
 <meta property="og:url" content="/2017/11/03/关于集群、分布式、伪分布式的概念/index.html">
 <meta property="og:site_name" content="Kurt's blog">
 <meta property="og:description" content="集群同一个应用部署在多个服务器上，就叫集群。 比如一个web项目，你扔到了多个服务器的Tomcat上，每个服务器都可以提供相同的服务。 特点：不同的多台机器在物理上是分开的，但是在逻辑上它们就是一台机器。 分布式把一个应用的业务拆分成多个子业务模块，这些子业务模块可能在不同的服务器上，所有的子业务组合起来才能实现一个完整应用。 比如一个商城web项目，把搜索服务独立出来放在不同的服务器上进行远程调">
-<meta property="og:updated_time" content="2018-05-20T03:03:04.219Z">
+<meta property="og:updated_time" content="2018-05-23T14:18:46.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于集群、分布式、伪分布式的概念理解">
 <meta name="twitter:description" content="集群同一个应用部署在多个服务器上，就叫集群。 比如一个web项目，你扔到了多个服务器的Tomcat上，每个服务器都可以提供相同的服务。 特点：不同的多台机器在物理上是分开的，但是在逻辑上它们就是一台机器。 分布式把一个应用的业务拆分成多个子业务模块，这些子业务模块可能在不同的服务器上，所有的子业务组合起来才能实现一个完整应用。 比如一个商城web项目，把搜索服务独立出来放在不同的服务器上进行远程调">
@@ -402,9 +402,9 @@
 <h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h2><p>把一个应用的业务拆分成多个子业务模块，这些子业务模块可能在不同的服务器上，所有的子业务组合起来才能实现一个完整应用。</p>
 <p>比如一个商城web项目，把搜索服务独立出来放在不同的服务器上进行远程调用。</p>
 <p>特点：将不同的业务拆分出来，但在使用上感觉它们就是一个整体。<br><a id="more"></a></p>
-<h2 id="伪分布式"><a href="#伪分布式" class="headerlink" title="伪分布式"></a>伪分布式</h2><p>很多人把伪分布式理解成是集群的单机版模式（如hadoop的非HA模式），但我认为那只是一个单机/单应用模式。</p>
-<p>以hadoop为例，伪分布式应该是一台机器上部署了多个节点，每个节点使用了不同的端口，由此来产生一个伪分布式结构。</p>
-<p>如分布式应该是将多个NameNode、DataNode、YARN节点安装在不同的机器上，伪分布式则全部安装同在一台机器上，而不是一个NameNode、DataNode、YARN的节点安装在一台机器上。</p>
+<h2 id="伪分布式"><a href="#伪分布式" class="headerlink" title="伪分布式"></a>伪分布式</h2><p>以hadoop为例，伪分布式理解成是集群的单机版模式（如hadoop的非HA模式）。</p>
+<p>伪分布式应该是一台机器上部署了多个子业务系统（如hadoop的namenode、datanode等安装在了一台机器上），由此来产生一个伪分布式结构。</p>
+<p>如分布式应该是将多个NameNode、DataNode、YARN节点安装在不同的机器上，伪分布式则把拆分的节点全部安装同在一台机器上，如NameNode、DataNode、YARN的节点安装在一台机器上。</p>
 <h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>无论是集群还是分布式，就是如何把物理上分开的服务器，在逻辑上把它们整合起来。</p>
 <p>这样有什么好处呢？</p>
 <p>当然就是解决并发的问题。</p>
