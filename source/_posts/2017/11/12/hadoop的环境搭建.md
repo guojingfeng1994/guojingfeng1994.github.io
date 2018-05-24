@@ -10,7 +10,8 @@ tags:
 ## 系统环境检查
 
 1. hadoop2.7之后需要Java 7以上的支持
-2. ssh环境，用于运行sshd远程管理Hadoop守护程序。（无密登录这里早已配好，这里不再赘述）。
+2. hadoop的HA机制依赖于ZooKeeper，安装请参考{% post_link zookeeper的环境搭建 zookeeper的环境搭建 %}
+3. ssh环境，用于运行sshd远程管理Hadoop守护程序。（无密登录这里早已配好，这里不再赘述）。
 
 ## 下载
 {% link 进入下载页面 http://hadoop.apache.org/releases.html %},下载最新版本，这里使用的是hadoop-2.8.3.tar.gz。
@@ -20,6 +21,7 @@ tags:
 cd ~
 tar zxf hadoop-2.8.3.tar.gz -C app
 {% endcodeblock %}
+<!-- more -->
 
 ## 单机模式安装
 
@@ -175,7 +177,7 @@ mapreduce这里不测了，等下测试集群版。
 </property>
 {% endcodeblock %}
 
-JournalNode节点存放的位置，edits.log文件是namenode的读写日志，单机版一个namenode对应一个edit文件，HA机制把edits文件共享给所有namenode，实现数据同步，不知道的没关系，配置就行
+JournalNode节点存放的位置，edits文件是namenode的读写日志，单机版一个namenode对应一个edit文件，namenode的HA机制就是剥离edits文件共享给所有namenode，实现数据同步。
 {% codeblock lang:shell %}
 <property>
   <name>dfs.namenode.shared.edits.dir</name>
