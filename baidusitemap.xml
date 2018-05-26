@@ -4,8 +4,33 @@
 
     
   <url>
+    <loc>/2017/12/19/solr%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2018-05-26T17:38:54.972Z</lastmod>
+    <data>
+        <display>
+        <title>solr的环境搭建</title>
+        <pubTime>2017-12-19T12:13:37.000Z</pubTime>
+        
+        <tag>Solr</tag>
+         
+        <tag>SolrCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="/categories/Java/"/>
+          
+             
+              <breadCrumb title="服务器环境搭建" url="/categories/Java/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>/2017/12/24/%E4%BD%BF%E7%94%A8solrj%E7%9A%84API%E5%AF%B9solrCloud%E7%9A%84%E5%AE%8C%E5%85%A8%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2018-05-25T15:26:24.876Z</lastmod>
+    <lastmod>2018-05-26T17:37:19.916Z</lastmod>
     <data>
         <display>
         <title>使用solrj的API对solrCloud的完全操作</title>
@@ -15,6 +40,31 @@
            
              
               <breadCrumb title="Java" url="/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>/2017/11/12/zookeeper%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2018-05-26T12:48:56.411Z</lastmod>
+    <data>
+        <display>
+        <title>zookeeper的环境搭建</title>
+        <pubTime>2017-11-12T03:12:09.000Z</pubTime>
+        
+        <tag>zookeeper</tag>
+         
+        <tag>zookeeper集群</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="/categories/Java/"/>
+          
+             
+              <breadCrumb title="服务器环境搭建" url="/categories/Java/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
           
         </display>
     </data>
@@ -85,56 +135,6 @@
            
              
               <breadCrumb title="Java" url="/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>/2017/11/12/zookeeper%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2018-05-21T02:22:27.139Z</lastmod>
-    <data>
-        <display>
-        <title>zookeeper的环境搭建</title>
-        <pubTime>2017-11-12T03:12:09.000Z</pubTime>
-        
-        <tag>zookeeper</tag>
-         
-        <tag>zookeeper集群</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="/categories/Java/"/>
-          
-             
-              <breadCrumb title="服务器环境搭建" url="/categories/Java/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>/2017/12/19/solr%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2018-05-20T04:04:41.504Z</lastmod>
-    <data>
-        <display>
-        <title>solr的环境搭建</title>
-        <pubTime>2017-12-19T12:13:37.000Z</pubTime>
-        
-        <tag>Solr</tag>
-         
-        <tag>SolrCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="/categories/Java/"/>
-          
-             
-              <breadCrumb title="服务器环境搭建" url="/categories/Java/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
           
         </display>
     </data>
