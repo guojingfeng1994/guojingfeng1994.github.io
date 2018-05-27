@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>/2017/12/24/%E4%BD%BF%E7%94%A8solrj%E7%9A%84API%E5%AF%B9solrCloud%E7%9A%84%E5%AE%8C%E5%85%A8%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2018-05-27T07:19:55.054Z</lastmod>
+    <data>
+        <display>
+        <title>使用solrj的API对solrCloud的完全操作</title>
+        <pubTime>2017-12-24T09:01:41.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Java" url="/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>/2017/12/19/solr%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2018-05-26T17:38:54.972Z</lastmod>
     <data>
@@ -22,24 +40,6 @@
           
              
               <breadCrumb title="服务器环境搭建" url="/categories/Java/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>/2017/12/24/%E4%BD%BF%E7%94%A8solrj%E7%9A%84API%E5%AF%B9solrCloud%E7%9A%84%E5%AE%8C%E5%85%A8%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2018-05-26T17:37:19.916Z</lastmod>
-    <data>
-        <display>
-        <title>使用solrj的API对solrCloud的完全操作</title>
-        <pubTime>2017-12-24T09:01:41.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Java" url="/categories/Java/"/>
           
         </display>
     </data>
