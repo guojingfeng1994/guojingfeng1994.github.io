@@ -15,6 +15,8 @@ solrCloud安装过程请参考{% post_link solr的环境搭建 solr的环境搭�
 
 参考官方文档：{% link Using SolrJ http://lucene.apache.org/solr/guide/7_0/using-solrj.html#using-solrj %}
 
+附加供测试的sql,[tb_item.sql](tb_item.sql)
+
 ## 测试样例代码
 <!-- more -->
 
@@ -118,27 +120,28 @@ public class solrCloudAPI {
    */
   @Test
   public void createField() throws IOException, SolrServerException {
-    // 对schema添加域，假设在数据库中有id,name,age字段，solr的域要与数据库中的字段对应
-    // id域默认已存在，省略之
+    // 对schema添加域，假设在数据库中有id,title,price字段，solr的域要与数据库中的字段对应
+    // 由于first_coll使用了_default的配置,id域默认已存在，省略之
 
-    // 添加name域
-    Map<String, Object> nameFieldAttributes = new HashMap<String, Object>();
-    nameFieldAttributes.put("name", "name"); // 域名称
-    nameFieldAttributes.put("type", "string"); // 域类型
-    nameFieldAttributes.put("indexed", true); // 域是否可索引
-    nameFieldAttributes.put("stored", true); // 域是否存储
-    SchemaRequest.AddField addNameField = new SchemaRequest.AddField(nameFieldAttributes);
-    // 添加age域
-    Map<String, Object> ageFieldAttributes = new HashMap<String, Object>();
-    ageFieldAttributes.put("name", "age"); // 域名称
-    ageFieldAttributes.put("type", "pint"); // 域类型
-    ageFieldAttributes.put("indexed", true); // 域是否可索引
-    ageFieldAttributes.put("stored", true); // 域是否存储
-    SchemaRequest.AddField addAgeField = new SchemaRequest.AddField(ageFieldAttributes);
+    // 添加title域
+    Map<String, Object> titleFieldAttributes = new HashMap<String, Object>();
+    titleFieldAttributes.put("name", "title"); // 域名称
+//    titleFieldAttributes.put("type", "string"); // 域类型
+    titleFieldAttributes.put("type", "text_cn"); // 支持中文分词的域类型，使用前需要先定义该域类型
+    titleFieldAttributes.put("indexed", true); // 域是否可索引
+    titleFieldAttributes.put("stored", true); // 域是否存储
+    SchemaRequest.AddField addTitleField = new SchemaRequest.AddField(titleFieldAttributes);
+    // 添加price域
+    Map<String, Object> priceFieldAttributes = new HashMap<String, Object>();
+    priceFieldAttributes.put("name", "price"); // 域名称
+    priceFieldAttributes.put("type", "pint"); // 域类型
+    priceFieldAttributes.put("indexed", true); // 域是否可索引
+    priceFieldAttributes.put("stored", true); // 域是否存储
+    SchemaRequest.AddField addPriceField = new SchemaRequest.AddField(priceFieldAttributes);
 
     // 发起添加域请求
-    addNameField.process(solrClient, "first_coll");
-    addAgeField.process(solrClient, "first_coll");
+    addTitleField.process(solrClient, "first_coll");
+    addPriceField.process(solrClient, "first_coll");
   }
 
   /**
@@ -148,18 +151,80 @@ public class solrCloudAPI {
    */
   @Test
   public void deleteField() throws IOException, SolrServerException {
-    SchemaRequest.DeleteField name = new SchemaRequest.DeleteField("name");
+    SchemaRequest.DeleteField name = new SchemaRequest.DeleteField("title");
     name.process(solrClient, "first_coll");
   }
 
   /**
-   * 查询跟域有关的信息
+   * 查询域信息
    * @throws IOException
    * @throws SolrServerException
    */
   @Test
   public void queryField() throws IOException, SolrServerException {
-    // 获取first_coll中所有域类型
+    // 获取first_coll当中所有域信息
+    SchemaRequest.Fields fields = new SchemaRequest.Fields();
+    SchemaResponse.FieldsResponse response = fields.process(solrClient, "first_coll");
+
+    List<Map<String, Object>> list = response.getFields();
+    for (Map<String, Object>  map : list) {
+      System.out.println(map);
+    }
+  }
+{% endcodeblock %}
+
+### 域类型API
+
+{% codeblock lang:java %}
+  /**
+   * 创建一个域类型，并添加中文分词器
+   * @throws IOException
+   * @throws SolrServerException
+   */
+  @Test
+  public void createFieldType() throws IOException, SolrServerException {
+    // 分词器定义
+    AnalyzerDefinition ad = new AnalyzerDefinition();
+    Map<String, Object> adTokenizer = new HashMap<String, Object>();
+    List<Map<String, Object>> adFilterList = new ArrayList<Map<String, Object>>();
+    Map<String, Object> adFilterMap;
+
+    adTokenizer.put("class", "solr.HMMChineseTokenizerFactory");
+
+    String[] adFilterArr = {"solr.CJKWidthFilterFactory", "solr.StopFilterFactory", "solr.PorterStemFilterFactory", "solr.LowerCaseFilterFactory"};
+    for (String s : adFilterArr) {
+      adFilterMap = new HashMap<String, Object>();
+      adFilterMap.put("class", s);
+      if ("solr.StopFilterFactory".equals(s))
+        adFilterMap.put("words", "org/apache/lucene/analysis/cn/smart/stopwords.txt");
+      adFilterList.add(adFilterMap);
+    }
+
+    ad.setTokenizer(adTokenizer);
+    ad.setFilters(adFilterList);
+
+    // 域类型定义
+    FieldTypeDefinition ftd = new FieldTypeDefinition();
+    Map<String, Object> ftdAttr = new HashMap<String, Object>();
+
+    ftdAttr.put("name", "text_cn");
+    ftdAttr.put("class", "solr.TextField");
+
+    ftd.setAttributes(ftdAttr);
+    ftd.setAnalyzer(ad); // 为域类型添加分词器
+
+    SchemaRequest.AddFieldType addFieldType = new SchemaRequest.AddFieldType(ftd);
+    addFieldType.process(solrClient, "first_coll");
+  }
+
+  /**
+   * 查询域类型
+   * @throws IOException
+   * @throws SolrServerException
+   */
+  @Test
+  public void queryFieldType() throws IOException, SolrServerException {
+    // 获取first_coll中所有域类型，通过域类型可以定义分词器
     SchemaRequest.FieldTypes fieldTypes = new SchemaRequest.FieldTypes();
     SchemaResponse.FieldTypesResponse fieldTypesResponse = fieldTypes.process(solrClient, "first_coll");
 
@@ -171,23 +236,14 @@ public class solrCloudAPI {
         }
       }
     }
-
-    // 获取first_coll当中所有域信息
-    SchemaRequest.Fields fields = new SchemaRequest.Fields();
-    SchemaResponse.FieldsResponse response = fields.process(solrClient, "first_coll");
-
-    List<Map<String, Object>> list = response.getFields();
-    for (Map<String, Object>  map2 : list) {
-      System.out.println(map2);
-    }
   }
 {% endcodeblock %}
 
-### 索引文档API
+### 索引的API
 
 {% codeblock lang:java %}
   /**
-   * 添加索引文档
+   * 添加索引文档，更新只要设置相同主键就可以就是覆盖更新
    * @throws IOException
    * @throws SolrServerException
    */
@@ -196,20 +252,21 @@ public class solrCloudAPI {
     Map<String,SolrInputField> fieldMap = new HashMap<String, SolrInputField>();
 
     SolrInputField id = new SolrInputField("id");
-    id.setValue("id_01");
+    id.setValue("536563");
     fieldMap.put("id", id);
 
-    SolrInputField name = new SolrInputField("name");
-    name.setValue("first_name");
-    fieldMap.put("name", name);
+    SolrInputField title = new SolrInputField("title");
+    title.setValue("new2 - 阿尔卡特 (OT-927) 炭黑 联通3G手机 双卡双待");
+    fieldMap.put("title", title);
 
-    SolrInputField age = new SolrInputField("age");
-    age.setValue(16);
-    fieldMap.put("age", age);
+    SolrInputField price = new SolrInputField("price");
+    price.setValue(29900000); // 单位：分
+    fieldMap.put("price", price);
 
     SolrInputDocument solrInputFields = new SolrInputDocument(fieldMap);
 
-    UpdateResponse response = solrClient.add("first_coll", solrInputFields);
+    solrClient.add("first_coll", solrInputFields);
+    solrClient.commit("first_coll");
   }
 
   /**
@@ -219,8 +276,73 @@ public class solrCloudAPI {
    */
   @Test
   public void deleteDoc() throws IOException, SolrServerException {
-    UpdateResponse response = solrClient.deleteById("first_coll", "id_01");
+    solrClient.deleteById("first_coll", "536563");
+    solrClient.commit("first_coll");
+  }
+
+  /**
+   * 查询索引
+   * @throws IOException
+   * @throws SolrServerException
+   */
+  @Test
+  public void queryDoc() throws IOException, SolrServerException {
+    HashMap<String, String> map = new HashMap<>();
+    // 要查询的域中的索引
+    map.put("q", "title:手机");
+    // 根据域排序排序
+    map.put("sort", "id desc");
+    // 分页查询
+    map.put("start", "0");
+    map.put("row", "10");
+    // 响应格式
+    map.put("wt", "json");
+    // ...所有参数参见官方文档中搜索一章
+
+    SolrParams solrParams = new MapSolrParams(map);
+    QueryRequest queryRequest = new QueryRequest(solrParams);
+
+    QueryResponse response = queryRequest.process(solrClient, "first_coll");
+    List<Object> list = (List<Object>) response.getResponse().asShallowMap().get("response");
+    for (Object o : list) {
+      System.out.println(o);
+    }
   }
 {% endcodeblock %}
 
-### 未完待续...
+### SolrZkClient的API
+
+{% codeblock lang:java %}
+  /**
+   * 对zookeeper中的配置文件进行上传和下载
+   * @throws IOException
+   * @throws SolrServerException
+   */
+  @Test
+  public void updateSolrConfig() throws IOException, SolrServerException {
+    // 对于一些无法使用REST API修改的配置，需要从zookeeper中把配置下载下来手动更改，再上传
+    SolrZkClient solrZkClient = new SolrZkClient(zkHostString, 30000);
+    String localPath = "D:\\web\\configs\\solrconfig.xml";
+    String zkPath = "/configs/first_coll/solrconfig.xml";
+
+    Path path = FileSystems.getDefault().getPath(localPath);
+    solrZkClient.downloadFromZK(zkPath, path);
+
+    // 可以直接操作xml修改，懒得写了，手动修改过程同样略
+    // 添加中文分词器的语句
+    //    <lib dir="${solr.install.dir:../../../..}/contrib/analysis-extras/lucene-libs" regex="lucene-analyzers-smartcn-.\..\..\.jar" />
+
+    // 修改完成后上传修改的配置文件，修改配置文件后需要重新加载配置才能生效
+
+//    String configName = "first_coll/solrconfig.xml";
+    // 更新配置方法1
+//    ZkConfigManager zkConfigManager = new ZkConfigManager(solrZkClient);
+//    zkConfigManager.uploadConfigDir(path, configName);
+    // 更新配置方法2
+//    solrZkClient.upConfig(path, configName);
+    
+    solrZkClient.close();
+  }
+{% endcodeblock %}
+
+### 将来...

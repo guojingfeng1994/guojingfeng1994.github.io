@@ -69,7 +69,7 @@ mkdir data && cd data
 echo 1 > myid
 {% endcodeblock %}
 
-_**注意**：1代表的是刚才配置的zookeeper节点对应的ID，比如zk1对应的server.1中的ID就是1，相应的zk2就是2，以此类推。myid是输出文件的名称，这个名称是固定的。_
+_**注意**：1代表的是刚才配置的zookeeper节点对应的ID，比如zk1对应的server.1中的ID就是1，相应的zk2就是2，以此类推。myid是输出文件的名称，这个名称是固定的，该myid文件里可以是1到255之间的任何整数。_
 
 ## 运行
 
